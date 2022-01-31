@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "computo-9fe05": {
+      "hosting": {
+        "computo": [
+          "computo-9fe05"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "computo-9fe05"
+  }
+}

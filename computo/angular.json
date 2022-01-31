@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "computo:build:production",
+            "firebaseProject": "computo-9fe05",
+            "firebaseHostingSite": "computo-9fe05"
+          }
         }
       }
     }
