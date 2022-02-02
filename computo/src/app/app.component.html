@@ -1,5 +1,6 @@
 <ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item | json}}
+  <li *ngFor="let item of equipment | async">
+    <pre>{{ item | json }}</pre>
+    <!-- <pre>{{item.EquipmentClass | json}}</pre> -->
   </li>
 </ul>

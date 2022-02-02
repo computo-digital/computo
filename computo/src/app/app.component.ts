@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection , CollectionReference} from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
+
+export interface EquipmentClass { ID: string; Description: string;}
+export interface Equipment { ID: string; Description: string; EquipmentClass: EquipmentClass; }
 
 @Component({
   selector: 'app-root',
@@ -8,9 +11,23 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   title = 'computo';
-  items: Observable<any[]>;
-  constructor(firestore: AngularFirestore) {
-    this.items = firestore.collection('items').valueChanges();
+  private equipmentClassCollection: AngularFirestoreCollection<EquipmentClass>;
+  private equipmentCollection: AngularFirestoreCollection<Equipment>;
+
+  equipment: Observable<Equipment[]>;
+  
+  constructor(private readonly store: AngularFirestore) {
+    this.equipmentClassCollection = store.collection<EquipmentClass>('EquipmentClass');
+    this.equipmentCollection = store.collection<Equipment>('Equipment');
+    this.equipment = this.equipmentCollection.valueChanges({ idField: 'ID' });
+
+  }
+  addEquipment(Description: string, EquipmentClass: EquipmentClass) {
+    // Persist a document id
+    const ID = this.store.createId();
+    const item: Equipment = { ID, Description, EquipmentClass};
+    this.equipmentCollection.doc(ID).set(item);
   }
 }
