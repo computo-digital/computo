@@ -2,5 +2,17 @@
   <li *ngFor="let item of equipment | async">
     <pre>{{ item | json }}</pre>
     <!-- <pre>{{item.EquipmentClass | json}}</pre> -->
+    <button type="submit" mat-raised-button color="primary" (click)="delete(item.id)">Delete</button>
   </li>
 </ul>
+
+
+<form [formGroup]="formGroup">
+  <mat-form-field fxFlex>
+    <mat-label>Equipment Type ID</mat-label>
+    <input matInput placeholder="Equipment Type ID" formControlName="description" autocomplete="off" required
+      oninput="this.value = this.value.toUpperCase()">
+  </mat-form-field>
+</form>
+
+<button type="submit" mat-raised-button color="primary" (click)="create()">Save</button>
