@@ -37,6 +37,10 @@
   border-bottom: 1px solid rgba(255,255,255,0.1) !important;
 }
 
+.active {
+  color: #669df6 !important;
+}
+
 .mat-panel-title-sub {
   color:rgba(255,255,255,.5);
   font-size: small;
@@ -46,7 +50,6 @@
 
 .mat-nav-list .mat-list-item{
   color: rgba(255,255,255,.8);
-  height: 32px;
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;

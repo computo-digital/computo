@@ -19,6 +19,7 @@ export class NavbarComponent {
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   step = -1;
+  panelOpenState = false;
 
   setStep(index: number) {
     this.step = index;

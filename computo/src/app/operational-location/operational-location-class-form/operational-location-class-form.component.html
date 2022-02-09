@@ -1,0 +1,24 @@
+<div fxLayout="row" class="container">
+    <div fxLayout="column" fxFlex="50">
+        <h2>Operational Location Class</h2>
+    </div>
+    <div fxLayout="column" fxFlex="50">
+        <div fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="10px">
+            <button mat-flat-button color="primary" aria-label="Example icon button with a home icon" routerLink="/operational/location/class/create">
+                <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                    <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Example home icon">done</mat-icon>
+                    <span>Save</span>
+                  </div>
+              </button>
+              <button mat-stroked-button aria-label="Example icon button with a home icon" routerLink="/operational/location">
+                <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                    <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Example home icon">close</mat-icon>
+                    <span>Close</span>
+                  </div>
+              </button>
+        </div>
+    </div>
+</div>
+<div fxLayout="column" class="container">
+    <pre>{{id | json}}</pre>
+</div>

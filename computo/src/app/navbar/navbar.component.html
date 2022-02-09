@@ -3,41 +3,77 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar class="sidenav-header">Computo</mat-toolbar>
     <mat-accordion multi="true">
-      <mat-expansion-panel (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
             <div fxLayout="column">
-              <span>Product definition management</span>
-              <span *ngIf="step != 0" class="mat-panel-title-sub">Personnel, Equipment, Material</span>
+              <span>Common object models</span>
+              <span class="mat-panel-title-sub">Location, Personnel, Equipment, Asset, Material, Process Segment, Operations</span>
             </div>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-nav-list>
-          <a mat-list-item href="#">
+          <a mat-list-item routerLink="/operational/location" routerLinkActive="active">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">manage_accounts</mat-icon>
-              <span>Personnel</span>
+              <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Example home icon">satellite</mat-icon>
+              <span>Operational location information</span>
             </div>
           </a>
           <a mat-list-item href="#">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">devices</mat-icon>
-              <span>Equipment</span>
+              <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Example home icon">manage_accounts</mat-icon>
+              <span>Personnel information</span>
             </div>
           </a>
           <a mat-list-item href="#">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-              <span>Material</span>
+              <mat-icon aria-hidden="false" aria-label="Example home icon">precision_manufacturing</mat-icon>
+              <span>Role based equipment information</span>
+            </div>
+          </a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">description_outline</mat-icon>
+              <span>Physical asset information</span>
+            </div>
+          </a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">inventory</mat-icon>
+              <span>Material information</span>
+            </div>
+          </a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">account_tree</mat-icon>
+              <span>Process segment information</span>
+            </div>
+          </a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">quiz</mat-icon>
+              <span>Operations test information</span>
+            </div>
+          </a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">fiber_manual_record</mat-icon>
+              <span>Operations record information</span>
+            </div>
+          </a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">event</mat-icon>
+              <span>Operations event information</span>
             </div>
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
-      <mat-expansion-panel (opened)="setStep(1)" hideToggle>
+      <!-- <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
             <div fxLayout="column">
-              <span>Production definition managment</span>
+              <span>Production resource managment</span>
               <span *ngIf="step != 1" class="mat-panel-title-sub">Personnel, Equipment, Material</span>
             </div>
           </mat-panel-title>
@@ -45,98 +81,174 @@
         <mat-nav-list>
           <a mat-list-item href="#">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">manage_accounts</mat-icon>
+              <mat-icon class="material-icon-outlined" aria-hidden="false" aria-label="Example home icon">manage_accounts</mat-icon>
               <span>Personnel</span>
             </div>
           </a>
           <a mat-list-item href="#">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">devices</mat-icon>
+              <mat-icon aria-hidden="false" aria-label="Example home icon">precision_manufacturing</mat-icon>
               <span>Equipment</span>
             </div>
           </a>
           <a mat-list-item href="#">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+              <mat-icon aria-hidden="false" aria-label="Example home icon">science_outline</mat-icon>
               <span>Material</span>
             </div>
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
-      <mat-expansion-panel (opened)="setStep(2)" hideToggle>
+      <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
             <div fxLayout="column">
               <span>Production detailed scheduling</span>
-              <span *ngIf="step != 2" class="mat-panel-title-sub">Production schedule, </span>
+              <span *ngIf="step != 2" class="mat-panel-title-sub">Production schedule, Work schedule</span>
             </div>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-nav-list>
           <a mat-list-item href="#">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">schedule</mat-icon>
-              <span>Schedule</span>
+              <mat-icon aria-hidden="false" aria-label="Example home icon">date_range</mat-icon>
+              <span>Production schedule</span>
+            </div>
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">update</mat-icon>
+              <span>Work schedule</span>
             </div>
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
-      <mat-expansion-panel (opened)="setStep(3)" hideToggle>
+      <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
             <div fxLayout="column">
               <span>Production dispatching</span>
-              <span *ngIf="step != 3" class="mat-panel-title-sub">Personnel, Equipment, Material</span>
+              <span *ngIf="step != 3" class="mat-panel-title-sub">Job List</span>
             </div>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-nav-list>
-          <a mat-list-item href="#">Link 1</a>
-          <a mat-list-item href="#">Link 2</a>
-          <a mat-list-item href="#">Link 3</a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">list</mat-icon>
+              <span>Job list</span>
+            </div>
+          </a>
         </mat-nav-list>
       </mat-expansion-panel>
-      <mat-expansion-panel  (opened)="setStep(4)" hideToggle>
+      <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
             <div fxLayout="column">
               <span>Production execution management</span>
-              <span *ngIf="step != 4" class="mat-panel-title-sub">Personnel, Equipment, Material</span>
+              <span class="mat-panel-title-sub">Work alert, Operational commands, Operational responses</span>
             </div>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-nav-list>
-          <a mat-list-item href="#">Link 1</a>
-          <a mat-list-item href="#">Link 2</a>
-          <a mat-list-item href="#">Link 3</a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">notifications</mat-icon>
+              <span>Work alert</span>
+            </div>
+          </a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">touch_app</mat-icon>
+              <span>Operational commands</span>
+            </div>
+          </a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">call_received</mat-icon>
+              <span>Operational responses</span>
+            </div>
+          </a>
         </mat-nav-list>
-        <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" (closed)=setStep(-1) hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <div fxLayout="column">
-                <span>Data collection</span>
-                <span *ngIf="step != 5" class="mat-panel-title-sub">Personnel, Equipment, Material</span>
-              </div>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <mat-nav-list>
-            <a mat-list-item href="#">Link 1</a>
-            <a mat-list-item href="#">Link 2</a>
-            <a mat-list-item href="#">Link 3</a>
-          </mat-nav-list>
-        </mat-expansion-panel>
       </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div fxLayout="column">
+              <span>Production data collection</span>
+              <span class="mat-panel-title-sub">Resource data, Operations data, Equipment status</span>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">folder</mat-icon>
+              <span>Resource data</span>
+            </div>
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div fxLayout="column">
+              <span>Production tracking</span>
+              <span class="mat-panel-title-sub">Resource data, Operations data, Equipment status</span>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">trending_flat</mat-icon>
+              <span>Work response</span>
+            </div>
+          </a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">analytics</mat-icon>
+              <span>Production performance</span>
+            </div>
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div fxLayout="column">
+              <span>Production performance</span>
+              <span class="mat-panel-title-sub">KPI values, </span>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">trending_flat</mat-icon>
+              <span>KPI values</span>
+            </div>
+          </a>
+          <a mat-list-item href="#">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">analytics</mat-icon>
+              <span>Production performance</span>
+            </div>
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel> -->
     </mat-accordion>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary" class="main-header">
+    <mat-toolbar class="main-header">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <!-- <span>computo</span> -->
     </mat-toolbar>
-    <!-- Add Content Here -->
-    {{step}}
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
