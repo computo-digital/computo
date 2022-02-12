@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OperationalLocationComponent } from './operational-location/operational-location/operational-location.component';
+import { OperationalLocationClassAddComponent } from './operational-location/operational-location-class-add/operational-location-class-add.component';
 import { OperationalLocationClassListComponent } from './operational-location/operational-location-class-list/operational-location-class-list.component';
-import { OperationalLocationClassFormComponent } from './operational-location/operational-location-class-form/operational-location-class-form.component';
+import { OperationalLocationClassUpdateComponent } from './operational-location/operational-location-class-update/operational-location-class-update.component';
+import { OperationalLocationComponent } from './operational-location/operational-location/operational-location.component';
 
 const routes: Routes = [
   {
@@ -10,13 +11,17 @@ const routes: Routes = [
     component: OperationalLocationComponent
   },
   {
-  path: 'operational/location/class',
-  component: OperationalLocationClassListComponent
+    path: 'operational/location/class',
+    component: OperationalLocationClassListComponent
   },
   {
-    path: 'operational/location/class/:id',
-    component: OperationalLocationClassFormComponent
-  }
+    path: 'operational/location/class/add',
+    component: OperationalLocationClassAddComponent
+  },
+  {
+    path: 'operational/location/class/update/:id',
+    component: OperationalLocationClassUpdateComponent
+  },
 ];
 
 @NgModule({

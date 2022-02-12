@@ -26,16 +26,18 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { OperationalLocationClassListComponent } from './operational-location/operational-location-class-list/operational-location-class-list.component';
-import { OperationalLocationClassFormComponent } from './operational-location/operational-location-class-form/operational-location-class-form.component';
 import { OperationalLocationComponent } from './operational-location/operational-location/operational-location.component';
+import { OperationalLocationClassUpdateComponent } from './operational-location/operational-location-class-update/operational-location-class-update.component';
+import { OperationalLocationClassAddComponent } from './operational-location/operational-location-class-add/operational-location-class-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     OperationalLocationClassListComponent,
-    OperationalLocationClassFormComponent,
     OperationalLocationComponent,
+    OperationalLocationClassUpdateComponent,
+    OperationalLocationClassAddComponent,
   ],
   imports: [
     BrowserModule,
