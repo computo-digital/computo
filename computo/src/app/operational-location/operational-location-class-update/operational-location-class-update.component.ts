@@ -12,11 +12,11 @@ import { FormBuilder } from '@angular/forms';
 })
 export class OperationalLocationClassUpdateComponent implements OnInit {
 
-  private document: AngularFirestoreDocument<OperationalLocationClassType>;
   public id: string | null = null;
+  private document: AngularFirestoreDocument<OperationalLocationClassType>;
+  public snapshot: Observable<any>;
   public form: any;
   public timestamp: any = new Date(0);
-  public snapshot: Observable<any>;
 
   constructor(
     private route: ActivatedRoute,

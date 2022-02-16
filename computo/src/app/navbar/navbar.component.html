@@ -8,20 +8,22 @@
           <mat-panel-title>
             <div fxLayout="column">
               <span>Common object models</span>
-              <span class="mat-panel-title-sub">Location, Personnel, Equipment, Asset, Material, Process Segment, Operations</span>
+              <span class="mat-panel-title-sub">Location, Personnel, Equipment, Asset, Material, Process Segment,
+                Operations</span>
             </div>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-nav-list>
           <a mat-list-item routerLink="/operational/location" routerLinkActive="active">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Example home icon">satellite</mat-icon>
+              <mat-icon>satellite</mat-icon>
               <span>Operational location information</span>
             </div>
           </a>
           <a mat-list-item href="#">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Example home icon">manage_accounts</mat-icon>
+              <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Example home icon">
+                manage_accounts</mat-icon>
               <span>Personnel information</span>
             </div>
           </a>
@@ -69,185 +71,29 @@
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
-      <!-- <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <div fxLayout="column">
-              <span>Production resource managment</span>
-              <span *ngIf="step != 1" class="mat-panel-title-sub">Personnel, Equipment, Material</span>
-            </div>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon class="material-icon-outlined" aria-hidden="false" aria-label="Example home icon">manage_accounts</mat-icon>
-              <span>Personnel</span>
-            </div>
-          </a>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">precision_manufacturing</mat-icon>
-              <span>Equipment</span>
-            </div>
-          </a>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">science_outline</mat-icon>
-              <span>Material</span>
-            </div>
-          </a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <div fxLayout="column">
-              <span>Production detailed scheduling</span>
-              <span *ngIf="step != 2" class="mat-panel-title-sub">Production schedule, Work schedule</span>
-            </div>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">date_range</mat-icon>
-              <span>Production schedule</span>
-            </div>
-          </a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">update</mat-icon>
-              <span>Work schedule</span>
-            </div>
-          </a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <div fxLayout="column">
-              <span>Production dispatching</span>
-              <span *ngIf="step != 3" class="mat-panel-title-sub">Job List</span>
-            </div>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">list</mat-icon>
-              <span>Job list</span>
-            </div>
-          </a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <div fxLayout="column">
-              <span>Production execution management</span>
-              <span class="mat-panel-title-sub">Work alert, Operational commands, Operational responses</span>
-            </div>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">notifications</mat-icon>
-              <span>Work alert</span>
-            </div>
-          </a>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">touch_app</mat-icon>
-              <span>Operational commands</span>
-            </div>
-          </a>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">call_received</mat-icon>
-              <span>Operational responses</span>
-            </div>
-          </a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <div fxLayout="column">
-              <span>Production data collection</span>
-              <span class="mat-panel-title-sub">Resource data, Operations data, Equipment status</span>
-            </div>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">folder</mat-icon>
-              <span>Resource data</span>
-            </div>
-          </a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <div fxLayout="column">
-              <span>Production tracking</span>
-              <span class="mat-panel-title-sub">Resource data, Operations data, Equipment status</span>
-            </div>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">trending_flat</mat-icon>
-              <span>Work response</span>
-            </div>
-          </a>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">analytics</mat-icon>
-              <span>Production performance</span>
-            </div>
-          </a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <div fxLayout="column">
-              <span>Production performance</span>
-              <span class="mat-panel-title-sub">KPI values, </span>
-            </div>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">trending_flat</mat-icon>
-              <span>KPI values</span>
-            </div>
-          </a>
-          <a mat-list-item href="#">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <mat-icon aria-hidden="false" aria-label="Example home icon">analytics</mat-icon>
-              <span>Production performance</span>
-            </div>
-          </a>
-        </mat-nav-list>
-      </mat-expansion-panel> -->
     </mat-accordion>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="main-header">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      <button mat-button [matMenuTriggerFor]="common">
+        <mat-icon>expand_more</mat-icon>
       </button>
-      <!-- <span>computo</span> -->
+      <mat-menu #common="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="location">
+          <mat-icon>satellite</mat-icon>
+          <span>Operational location</span>
+        </button>
+      </mat-menu>
+      <mat-menu #location="matMenu">
+        <button mat-menu-item routerLink="/operational/location/class/add">
+          <mat-icon>add</mat-icon>
+          <span>Operational Location Class</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>add</mat-icon>
+          <span>Operational Location</span>
+        </button>
+      </mat-menu>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
