@@ -27,8 +27,9 @@ import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { OperationalLocationClassListComponent } from './operational-location/operational-location-class-list/operational-location-class-list.component';
 import { OperationalLocationComponent } from './operational-location/operational-location/operational-location.component';
-import { OperationalLocationClassUpdateComponent } from './operational-location/operational-location-class-update/operational-location-class-update.component';
 import { OperationalLocationClassAddComponent } from './operational-location/operational-location-class-add/operational-location-class-add.component';
+import { OperationalLocationClassDeleteComponent } from './operational-location/operational-location-class-delete/operational-location-class-delete.component';
+import { OperationalLocationClassUpdateComponent } from './operational-location/operational-location-class-update/operational-location-class-update.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +37,9 @@ import { OperationalLocationClassAddComponent } from './operational-location/ope
     NavbarComponent,
     OperationalLocationClassListComponent,
     OperationalLocationComponent,
-    OperationalLocationClassUpdateComponent,
     OperationalLocationClassAddComponent,
+    OperationalLocationClassDeleteComponent,
+    OperationalLocationClassUpdateComponent,
   ],
   imports: [
     BrowserModule,

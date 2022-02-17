@@ -16,21 +16,8 @@ export class NavbarComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-
-  step = -1;
-  panelOpenState = false;
-
-  setStep(index: number) {
-    this.step = index;
-  }
-
-  nextStep() {
-    this.step++;
-  }
-
-  prevStep() {
-    this.step--;
-  }
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    ) {}
 
 }

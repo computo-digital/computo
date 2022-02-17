@@ -12,18 +12,20 @@ export class OperationalLocationClassListComponent implements OnInit {
 
   private collection: AngularFirestoreCollection<OperationalLocationClassType>;
   data: Observable<OperationalLocationClassType[]>;
+  controls: boolean = false;
   columns: string[] = [
     'id', 
     'description',
-    'hierarchyScope',
-    'operationalLocationClass',
-    'operationalLocationID',
-    'operationalLocationClassProperty'
+    // 'hierarchyScope',
+    // 'operationalLocationClass',
+    // 'operationalLocationID',
+    // 'operationalLocationClassProperty',
+    'controls'
   ];
 
   constructor(private readonly store: AngularFirestore) {
     this.collection = store.collection<OperationalLocationClassType>('OperationalLocationClassType')
-    this.data = this.collection.valueChanges({ idField: 'id' });
+    this.data = this.collection.valueChanges();
   }
 
   ngOnInit(): void {

@@ -2,8 +2,50 @@ table {
     width: 100%;
 }
 
+header {
+    padding: 24px;
+    background-color: rebeccapurple;
+}
+
 table tr:hover{
     cursor: pointer;
     background: #b4b4b433;
     color: white;
 }
+
+.toolbar {
+    padding: 42px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }
+
+
+  .table {
+    width: 100%;
+  }
+  
+  .mat-column-position {
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+  }
+  
+  .mat-column-id {
+    /* padding-left: 16px;
+    font-weight:bold; */
+    /* font-size: 20px; */
+    font-weight:bold; 
+  }
+  
+  .mat-column-weight {
+    font-style: italic;
+  }
+  
+  .mat-column-controls {
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }

@@ -74,27 +74,8 @@
     </mat-accordion>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar class="main-header">
-      <button mat-button [matMenuTriggerFor]="common">
-        <mat-icon>expand_more</mat-icon>
-      </button>
-      <mat-menu #common="matMenu">
-        <button mat-menu-item [matMenuTriggerFor]="location">
-          <mat-icon>satellite</mat-icon>
-          <span>Operational location</span>
-        </button>
-      </mat-menu>
-      <mat-menu #location="matMenu">
-        <button mat-menu-item routerLink="/operational/location/class/add">
-          <mat-icon>add</mat-icon>
-          <span>Operational Location Class</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>add</mat-icon>
-          <span>Operational Location</span>
-        </button>
-      </mat-menu>
-    </mat-toolbar>
+    <!-- <mat-toolbar class="main-header">
+    </mat-toolbar> -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

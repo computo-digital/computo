@@ -1,7 +1,7 @@
 <div class="container">
     <div fxLayout="row">
         <div fxLayout="column" fxFlex="50">
-            <h2>Operational Location Class</h2>
+            <h2>New operational location class</h2>
         </div>
         <div fxLayout="column" fxFlex="50">
             <div fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="24px">
@@ -19,15 +19,11 @@
     <form [formGroup]="form" fxLayout="column" fxLayoutGap="24px">
         <mat-form-field>
             <mat-label>ID</mat-label>
-            <input matInput formControlName="id" placeholder="" autocomplete="off" required>
+            <input matInput placeholder="Recommended convetion OLC-SITE-AREA-CLASS, example: OLC-ST1-PRO-CRU-001." formControlName="id" autocomplete="off" required>
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Modified</mat-label>
-            <input matInput placeholder="" value="{{timestamp}}">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Description</mat-label>
-            <textarea matInput formControlName="description" placeholder="Short description"></textarea>
+            <mat-label>Created</mat-label>
+            <input matInput type="datetime" formControlName="created">
         </mat-form-field>
     </form>
 </div>

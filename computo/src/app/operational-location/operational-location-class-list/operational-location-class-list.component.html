@@ -1,30 +1,64 @@
-<div fxLayout="row">
-  <table mat-table [dataSource]="data" class="container">
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef>ID</th>
-      <td mat-cell *matCellDef="let element">{{element.id}}</td>
-    </ng-container>
-    <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef>Description</th>
-      <td mat-cell *matCellDef="let element">{{element.description}}</td>
-    </ng-container>
-    <ng-container matColumnDef="hierarchyScope">
-      <th mat-header-cell *matHeaderCellDef>Hierarchy Scope</th>
-      <td mat-cell *matCellDef="let element">{{element.hierarchyScope | json}}</td>
-    </ng-container>
-    <ng-container matColumnDef="operationalLocationClass">
-      <th mat-header-cell *matHeaderCellDef>Operational Location Class</th>
-      <td mat-cell *matCellDef="let element">{{element.operationalLocationClass}}</td>
-    </ng-container>
-    <ng-container matColumnDef="operationalLocationID">
-      <th mat-header-cell *matHeaderCellDef>Operational Location ID</th>
-      <td mat-cell *matCellDef="let element">{{element.operationalLocationID}}</td>
-    </ng-container>
-    <ng-container matColumnDef="operationalLocationClassProperty">
-      <th mat-header-cell *matHeaderCellDef>Operational Location Class Property</th>
-      <td mat-cell *matCellDef="let element">{{element.operationalLocationClassProperty}}</td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="columns"></tr>
-    <tr mat-row *matRowDef="let row; columns: columns;" routerLink="/operational/location/class/update/{{row.id}}"></tr>
-  </table>
-</div>
+<mat-toolbar class="toolbar">
+  <span class="spacer"></span>
+  <div class="row" fxLayoutAlign="center center" fxLayoutGap="24px">
+    <form style="font-size: 12px; padding-top: 16px">
+      <mat-form-field appearance="outline">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput value="" autocomplete="off">
+      </mat-form-field>
+    </form>
+    <button mat-flat-button color="primary" [matMenuTriggerFor]="menu">
+      <span>Add</span>
+      <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/operational/location/class/add">
+        <span>Operational location class</span>
+      </button>
+      <button mat-menu-item routerLink="/operational/location/class/add">
+        <span>Operational location</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+<table mat-table [dataSource]="data" class="table">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let element" routerLink="/operational/location/class/update/{{element.id}}">
+      <span>{{element.id}}</span>
+      <span>{{element.descriptioN}}</span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="timestamp">
+    <th mat-header-cell *matHeaderCellDef>Timestamp</th>
+    <td mat-cell *matCellDef="let element">{{element.timestamp}}</td>
+  </ng-container>
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef>Description</th>
+    <td mat-cell *matCellDef="let element">{{element.description}}</td>
+  </ng-container>
+  <ng-container matColumnDef="hierarchyScope">
+    <th mat-header-cell *matHeaderCellDef>Hierarchy Scope</th>
+    <td mat-cell *matCellDef="let element">{{element.hierarchyScope | json}}</td>
+  </ng-container>
+  <ng-container matColumnDef="operationalLocationClass">
+    <th mat-header-cell *matHeaderCellDef>Operational Location Class</th>
+    <td mat-cell *matCellDef="let element">{{element.operationalLocationClass}}</td>
+  </ng-container>
+  <ng-container matColumnDef="operationalLocationID">
+    <th mat-header-cell *matHeaderCellDef>Operational Location ID</th>
+    <td mat-cell *matCellDef="let element">{{element.operationalLocationID}}</td>
+  </ng-container>
+  <ng-container matColumnDef="operationalLocationClassProperty">
+    <th mat-header-cell *matHeaderCellDef>Operational Location Class Property</th>
+    <td mat-cell *matCellDef="let element">{{element.operationalLocationClassProperty}}</td>
+  </ng-container>
+  <ng-container matColumnDef="controls">
+    <th mat-header-cell *matHeaderCellDef class="header-align-right"></th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon color="primary">chevron_right</mat-icon>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns;" routerLink="/operational/location/class/update/{{row.id}}"></tr>
+</table>
