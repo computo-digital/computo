@@ -1,29 +1,30 @@
 <div class="container">
-    <div fxLayout="row">
-        <div fxLayout="column" fxFlex="50">
-            <h2>New operational location class</h2>
-        </div>
-        <div fxLayout="column" fxFlex="50">
-            <div fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="24px">
-                <button mat-icon-button matTooltip="Save" aria-label="Example icon button with a home icon"
-                    (click)="add()">
-                    <mat-icon>done</mat-icon>
-                </button>
-                <button mat-icon-button matTooltip="Close" aria-label="Example icon button with a home icon"
-                    routerLink="/operational/location">
-                    <mat-icon>close</mat-icon>
-                </button>
+    <form [formGroup]="form" (ngSubmit)="add()" fxLayout="column" fxLayoutGap="24px">
+        <div fxLayout="row">
+            <div fxLayout="column" fxFlex="50">
+                <h2>New operational location class</h2>
+            </div>
+            <div fxLayout="column" fxFlex="50">
+                <div fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="24px">
+                    <button mat-icon-button *ngIf="form" [disabled]="!form.valid" type="submit" matTooltip="Save" color="primary">
+                        <mat-icon>done</mat-icon>
+                    </button>
+                    <button mat-icon-button matTooltip="Close" aria-label="Example icon button with a home icon"
+                        routerLink="/operational/location">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <form [formGroup]="form" fxLayout="column" fxLayoutGap="24px">
         <mat-form-field>
             <mat-label>ID</mat-label>
-            <input matInput placeholder="Recommended convetion OLC-SITE-AREA-CLASS, example: OLC-ST1-PRO-CRU-001." formControlName="id" autocomplete="off" required>
+            <input matInput placeholder="Recommended convetion OLC-SITE-AREA-CLASS, example: OLC-ST1-PRO-CRU-001."
+                formControlName="id" autocomplete="off" required>
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Created</mat-label>
-            <input matInput type="datetime" formControlName="created">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Short description." formControlName="description" autocomplete="off"
+                required></textarea>
         </mat-form-field>
     </form>
 </div>

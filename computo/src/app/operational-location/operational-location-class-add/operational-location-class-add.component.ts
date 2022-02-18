@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { OperationalLocationClassType } from 'src/app/types/operational-location-class';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
+import {MatChipInputEvent} from '@angular/material/chips';
+import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-operational-location-class-add',
@@ -13,7 +16,7 @@ export class OperationalLocationClassAddComponent implements OnInit {
 
   private collection: AngularFirestoreCollection<OperationalLocationClassType>;
   list: Observable<OperationalLocationClassType[]>;
-  form: any;
+  form: FormGroup = new FormGroup({})
 
   constructor(
     private readonly store: AngularFirestore,
@@ -21,15 +24,18 @@ export class OperationalLocationClassAddComponent implements OnInit {
   ) {
     this.collection = store.collection<OperationalLocationClassType>('OperationalLocationClassType');
     this.list = this.collection.valueChanges({ idField: 'id' });
+  }
+
+  ngOnInit(): void {
+
     this.form = this.formBuilder.group({
       id: [''],
       created: [new Date()],
       description: [''],
-      hierarchyScope: ['']
+      hierarchyScope: [''],
+      operationalLocationClass: [[]]
     });
-  }
 
-  ngOnInit(): void {
   }
 
   add() {
