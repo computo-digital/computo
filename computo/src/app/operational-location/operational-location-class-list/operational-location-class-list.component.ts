@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
-import { OperationalLocationClassType } from 'src/app/types/operational-location-class';
+import { OperationalLocationClassType } from 'src/app/types/operational-location';
 
 @Component({
   selector: 'app-operational-location-class-list',
@@ -11,11 +11,11 @@ import { OperationalLocationClassType } from 'src/app/types/operational-location
 export class OperationalLocationClassListComponent implements OnInit {
 
   private collection: AngularFirestoreCollection<OperationalLocationClassType>;
-  data: Observable<OperationalLocationClassType[]>;
+  documents: Observable<OperationalLocationClassType[]>;
   controls: boolean = false;
   columns: string[] = [
-    'id', 
-    'description',
+    'ID', 
+    'Description',
     // 'hierarchyScope',
     // 'operationalLocationClass',
     // 'operationalLocationID',
@@ -24,8 +24,8 @@ export class OperationalLocationClassListComponent implements OnInit {
   ];
 
   constructor(private readonly store: AngularFirestore) {
-    this.collection = store.collection<OperationalLocationClassType>('OperationalLocationClassType')
-    this.data = this.collection.valueChanges();
+    this.collection = store.collection<OperationalLocationClassType>('OperationalLocationClass')
+    this.documents = this.collection.valueChanges({ idField: 'document' });
   }
 
   ngOnInit(): void {

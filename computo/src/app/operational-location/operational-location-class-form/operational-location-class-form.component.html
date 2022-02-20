@@ -1,0 +1,12 @@
+<div>
+    {{ (item | async)?.name }}
+</div>
+
+
+<div>
+    {{ (property | async)?.name }}
+</div>
+
+<li *ngFor="let item of tasks | async">
+    {{ item.name }}
+</li>
