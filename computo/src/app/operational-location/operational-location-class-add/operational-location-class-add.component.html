@@ -33,26 +33,9 @@
             </mat-form-field>
             <app-hierarchy-scope [form]="form"></app-hierarchy-scope>
             <h2>Relationships</h2>
-            <mat-form-field appearance="outline">
-                <mat-label>Operational Location Class</mat-label>
-                <mat-chip-list #chipList aria-label="Class selection">
-                    <mat-chip *ngFor="let fruit of form.controls['operationalLocationClass'].value"
-                        (removed)="remove(fruit)"> {{fruit}}
-                        <button matChipRemove>
-                            <mat-icon>cancel</mat-icon>
-                        </button>
-                    </mat-chip>
-                    <input placeholder="Add related operational location class..." #fruitInput formControlName="predicate" [matAutocomplete]="auto"
-                        [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                        (matChipInputTokenEnd)="addClass($event)">
-                </mat-chip-list>
-                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-                    <mat-option *ngFor="let fruit of operationalLocationClassFilter$ | async" [value]="fruit.id">
-                        {{fruit.id}}
-                    </mat-option>
-                </mat-autocomplete>
-            </mat-form-field>
+            <app-relationship [form]="form" label="Operational Location Class" collectionName="OperationalLocationClass" relationshipName="operationalLocationClass"></app-relationship>
             <button mat-stroked-button type="submit" [disabled]="!form.valid" fxFlex="20">Add new operational class</button>
         </div>
     </form>
+    <pre>{{form.value | json}}</pre>
 </div>

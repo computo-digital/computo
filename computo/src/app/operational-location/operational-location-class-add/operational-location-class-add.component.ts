@@ -82,29 +82,29 @@ export class OperationalLocationClassAddComponent implements OnInit {
     })
   }
 
-  addClass(event: MatChipInputEvent): void {
-    const value = (event.value || '').trim();
+  // addClass(event: MatChipInputEvent): void {
+  //   const value = (event.value || '').trim();
 
-    if (value) {
-      this.form.controls['operationalLocationClass'].value.push(value);
-    }
+  //   if (value) {
+  //     this.form.controls['operationalLocationClass'].value.push(value);
+  //   }
 
-    event.chipInput!.clear();
-    this.form.controls['predicate'].setValue(null);
-  }
+  //   event.chipInput!.clear();
+  //   this.form.controls['predicate'].setValue(null);
+  // }
 
-  remove(fruit: string): void {
-    const index = this.form.controls['operationalLocationClass'].value.indexOf(fruit);
+  // remove(fruit: string): void {
+  //   const index = this.form.controls['operationalLocationClass'].value.indexOf(fruit);
 
-    if (index >= 0) {
-      this.form.controls['operationalLocationClass'].value.splice(index, 1);
-    }
-  }
+  //   if (index >= 0) {
+  //     this.form.controls['operationalLocationClass'].value.splice(index, 1);
+  //   }
+  // }
 
-  selected(event: MatAutocompleteSelectedEvent): void {
-    this.form.controls['operationalLocationClass'].value.push(event.option.viewValue);
-    this.fruitInput.nativeElement.value = '';
-    this.form.controls['predicate'].setValue(null);
-  }
+  // selected(event: MatAutocompleteSelectedEvent): void {
+  //   this.form.controls['operationalLocationClass'].value.push(event.option.viewValue);
+  //   this.fruitInput.nativeElement.value = '';
+  //   this.form.controls['predicate'].setValue(null);
+  // }
 
 }

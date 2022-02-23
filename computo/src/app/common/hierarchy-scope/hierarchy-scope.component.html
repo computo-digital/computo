@@ -13,7 +13,7 @@
             [matAutocomplete]="auto" required>
         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="setEquipmentID($event)">
             <mat-option *ngFor="let option of equipmentFilter$ | async" [value]="option">
-                {{option.hierarchyScope.equipmentLevel}} - {{option.id}}
+                {{option.equipmentLevel.equipmentLevel}} - {{option.id}}
             </mat-option>
         </mat-autocomplete>
         <mat-hint>A unique identification of an equipment element the exhcanged information is relevant.</mat-hint>

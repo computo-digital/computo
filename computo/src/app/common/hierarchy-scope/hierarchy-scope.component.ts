@@ -42,15 +42,11 @@ export class HierarchyScopeComponent implements OnInit {
   }
 
   setEquipmentID(event: MatAutocompleteSelectedEvent): void {
-    console.log('selected', event.option.value);
     const equipmentID = this.form.get('hierarchyScope.equipmentID');
     const equipmentLevel = this.form.get('hierarchyScope.equipmentLevel');
     equipmentID?.setValue(event.option.value.id);
     equipmentLevel?.setValue(event.option.value.equipmentLevel.equipmentLevel);
-
     this.autocompleteForm.setValue(event.option.value.id);
   }
-
   
-
 }
