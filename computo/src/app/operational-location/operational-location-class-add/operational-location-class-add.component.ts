@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 import { OperationalLocationClassType } from '../../types/operational-location';
 import { Router } from '@angular/router';
 import { of, map, take, startWith, filter, scan, combineLatest, forkJoin } from 'rxjs';
-import { EquipmentElementLevelType } from '../../types/common';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 
@@ -22,7 +21,6 @@ export class OperationalLocationClassAddComponent implements OnInit {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   operationalLocationClass$: Observable<OperationalLocationClassType[]>;
   operationalLocationClassFilter$: Observable<OperationalLocationClassType[]>;
-  equipmentElementLevelType = EquipmentElementLevelType;
 
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
 

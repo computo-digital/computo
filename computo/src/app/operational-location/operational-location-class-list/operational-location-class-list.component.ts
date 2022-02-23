@@ -16,7 +16,7 @@ export class OperationalLocationClassListComponent implements OnInit {
   columns: string[] = [
     'ID', 
     'Description',
-    // 'hierarchyScope',
+    'hierarchyScope',
     // 'operationalLocationClass',
     // 'operationalLocationID',
     // 'operationalLocationClassProperty',

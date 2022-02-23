@@ -13,7 +13,7 @@ export class HierarchyScopeComponent implements OnInit {
 
   equipmentElementLevelType = EquipmentElementLevelType;
 
-  constructor(private formBuilder: FormBuilder,) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

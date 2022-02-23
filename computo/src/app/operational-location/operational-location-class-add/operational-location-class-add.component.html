@@ -31,20 +31,6 @@
                     placeholder="Short description of class." autocomplete="off"></textarea>
                 <mat-hint align="end">{{description.value.length}} / 256</mat-hint>
             </mat-form-field>
-            <!-- <h2>Hierarchy Scope</h2>
-            <p>The <i>hierarchy scope</i> identifies where the exchanged information fits within the role based equipment
-            hierarchy. It defines the scope of the exchanged information, such as site area or area for which the information
-            is relevant. The <i>hierarchy scope</i> also identifies the associated instance in the role based equipment
-            hierarchy.</p>
-            <mat-form-field formGroupName="hierarchyScope" appearance="outline">
-                <mat-label>Equipment Level</mat-label>
-                <mat-select formControlName="equipmentLevel">
-                    <mat-option *ngFor="let option of equipmentElementLevelType" value="{{option}}">
-                        {{option}}
-                    </mat-option>
-                </mat-select>
-                <mat-hint>Objects in the information which required unique identificaitons contain an ID attribute</mat-hint>
-            </mat-form-field> -->
             <app-hierarchy-scope [form]="form"></app-hierarchy-scope>
             <h2>Relationships</h2>
             <mat-form-field appearance="outline">
