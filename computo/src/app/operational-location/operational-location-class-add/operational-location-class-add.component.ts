@@ -30,10 +30,10 @@ export class OperationalLocationClassAddComponent implements OnInit {
     modified: [new Date()],
     description: ['', Validators.required],
     hierarchyScope: this.formBuilder.group({
-      equipmentID: [''],
-      equipmentLevel: [''],
+      equipmentID: ['', Validators.required],
+      equipmentLevel: ['']
     }),
-    operationalLocationClass: [['test']],
+    operationalLocationClass: [[]],
     predicate: ['']
   });
 

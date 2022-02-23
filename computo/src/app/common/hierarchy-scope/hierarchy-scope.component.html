@@ -1,10 +1,23 @@
 <div [formGroup]="form" fxLayout="column" fxFlex="704px">
     <h2>Hierarchy Scope</h2>
-    <p>The <i>hierarchy scope</i> identifies where the exchanged information fits within the role based equipment
-        hierarchy. It defines the scope of the exchanged information, such as site area or area for which the
-        information
-        is relevant. The <i>hierarchy scope</i> also identifies the associated instance in the role based equipment
-        hierarchy.</p>
+    <p>
+        The <i>hierarchy scope</i> identifies where the exchanged information
+        fits within the role based equipment hierarchy. It defines the scope 
+        of the exchanged information, such as site area or area for which the
+        information is relevant. The <i>hierarchy scope</i> also identifies 
+        the associated instance in the role based equipment hierarchy.
+    </p>
+    <mat-form-field appearance="outline">
+        <mat-label>Equipment ID</mat-label>
+        <input type="text" placeholder="Select a equipment id of enterprise, site, area, or work centre." matInput [formControl]="autocompleteForm"
+            [matAutocomplete]="auto" required>
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="setEquipmentID($event)">
+            <mat-option *ngFor="let option of equipmentFilter$ | async" [value]="option">
+                {{option.hierarchyScope.equipmentLevel}} - {{option.id}}
+            </mat-option>
+        </mat-autocomplete>
+        <mat-hint>A unique identification of an equipment element the exhcanged information is relevant.</mat-hint>
+    </mat-form-field>
     <mat-form-field formGroupName="hierarchyScope" appearance="outline">
         <mat-label>Equipment Level</mat-label>
         <mat-select formControlName="equipmentLevel">
@@ -12,6 +25,6 @@
                 {{option}}
             </mat-option>
         </mat-select>
-        <mat-hint>Objects in the information which required unique identificaitons contain an ID attribute</mat-hint>
+        <mat-hint>Identification of the equipment level if the equipment element is defined.</mat-hint>
     </mat-form-field>
 </div>
