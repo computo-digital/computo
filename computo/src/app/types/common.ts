@@ -198,23 +198,23 @@ export interface HierarchyScopeType {
 
 // // Defines the role based equipment hierarchy level as defined in ISA 95. 
 // // Defined values are:
-// export let EquipmentElementLevelType = [
-//     "Enterprise",
-//     "Site",
-//     "Area",
-//     "ProcessCell",
-//     "Unit",
-//     "ProductionLine",
-//     "WorkCell",
-//     "ProductionUnit",
-//     "StorageZone",
-//     "StorageUnit",
-//     "WorkCenter",
-//     "WorkUnit",
-//     "EquipmentModule",
-//     "ControlModule",
-//     "Other"
-// ]
+export let EquipmentElementLevelType = [
+    "Enterprise",
+    "Site",
+    "Area",
+    "ProcessCell",
+    "Unit",
+    "ProductionLine",
+    "WorkCell",
+    "ProductionUnit",
+    "StorageZone",
+    "StorageUnit",
+    "WorkCenter",
+    "WorkUnit",
+    "EquipmentModule",
+    "ControlModule",
+    "Other"
+]
 
 // // The hierarchy scope identifies where the exchanged information fits within the role-based equipment hierarchy. 
 // // It defines the scope of the exchanged information, such as a site or area for which the information is relevant. 
@@ -1002,9 +1002,9 @@ export interface HierarchyScopeType {
 //     UnitOfMeasure: string;
 // }
 
-// export interface ValueType {
-//     ValueString: string;
-//     DataType: string;
-//     UnitOfMeasure: string;
-//     Key: string;
-// }
+export interface ValueType {
+    ValueString: string;
+    DataType: string;
+    UnitOfMeasure: string;
+    Key: string;
+}

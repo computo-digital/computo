@@ -31,6 +31,7 @@ import { OperationalLocationClassComponent } from './operational-location/operat
 import { OperationalLocationClassPropertiesComponent } from './operational-location/operational-location-class-properties/operational-location-class-properties.component';
 import { OperationalLocationClassAddComponent } from './operational-location/operational-location-class-add/operational-location-class-add.component';
 import { OperationalLocationClassUpdateComponent } from './operational-location/operational-location-class-update/operational-location-class-update.component';
+import { HierarchyScopeComponent } from './common/hierarchy-scope/hierarchy-scope.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { OperationalLocationClassUpdateComponent } from './operational-location/
     OperationalLocationClassPropertiesComponent,
     OperationalLocationClassAddComponent,
     OperationalLocationClassUpdateComponent,
+    HierarchyScopeComponent,
   ],
   imports: [
     BrowserModule,

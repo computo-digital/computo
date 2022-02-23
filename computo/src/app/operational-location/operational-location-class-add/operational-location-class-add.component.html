@@ -1,46 +1,73 @@
-<p>operational-location-class-add works!</p>
-
-
-<ul>
-    <li *ngFor="let item of documents | async">
-        {{ item | json }}
-    </li>
-</ul>
-
-
-<form [formGroup]="form" (ngSubmit)="add()">
-
-    <mat-form-field>
-        <mat-label>ID</mat-label>
-        <input matInput placeholder="Equipment Type ID" formControlName="id" autocomplete="off" required
-          oninput="this.value = this.value.toUpperCase()">
-      </mat-form-field>
-      {{form.hasError('id')}}
-      <div *ngIf="objectId">
-        <mat-spinner matSuffix [diameter]="18" style="float: right; margin-left: 8px" *ngIf="objectId.pending">
-        </mat-spinner>
-        <mat-error *ngIf="objectId.invalid && (objectId.dirty || objectId.touched) && objectId.errors !== null">
-          id already exists, try something different
-        </mat-error>
-        {{objectId}}
-      </div>
-
-
-    <!-- <mat-form-field>
-        <mat-label>description</mat-label>
-        <input matInput formGroupName="description" required>
-    </mat-form-field>
-    <div formGroupName="hierarchyScope">
-        <mat-form-field>
-            <mat-label>equipmentID</mat-label>
-            <input matInput formGroupName="equipmentID" required autocomplete="off">
-        </mat-form-field> -->
-    <!-- </div> -->
-    <p>Form Status: {{ form.status }}</p>
-    <p>Complete the form to enable button.</p>
-    <button type="submit" [disabled]="!form.valid">Submit</button>
-</form>
-
-{{form.errors}}
-
-<!-- <button (click)="add({id: 'test'})">test</button> -->
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="set()" fxLayout="row" fxLayoutAlign="center center">
+        <div fxLayout="column" fxFlex="704px">
+            <h2>Create a new operational location class</h2>
+            <p>A representation of a grouping of operational locations with similar
+                characteristics for a definite purpose such as manufacturing operations
+                definition, scheduling, capability and performance shall be presented as an
+                operational location class.
+            
+                Any operational location may be a member of zero or more operational
+                location classes.</p>
+            <mat-form-field appearance="outline">
+                <mat-label>ID</mat-label>
+                <input matInput formControlName="id" #id maxlength="64"
+                    placeholder="Ex. LC-MIL for Mill/Grinding Operational Location Class." autocomplete="off" required
+                    oninput="this.value = this.value.toUpperCase()">
+                <mat-hint>Objects in the information which required unique identificaitons contain an ID attribute</mat-hint>
+                <mat-hint align="end">{{id.value.length}} / 64</mat-hint>
+                <div *ngIf="objectId" matSuffix>
+                    <mat-error *ngIf="objectId.hasError('exists')">
+                        <strong>Already exists, try something different.</strong>
+                    </mat-error>
+                    <mat-error *ngIf="objectId.hasError('required')">
+                        ID* <strong>required</strong>
+                    </mat-error>
+                </div>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description" rows="4" required #description maxlength="256"
+                    placeholder="Short description of class." autocomplete="off"></textarea>
+                <mat-hint align="end">{{description.value.length}} / 256</mat-hint>
+            </mat-form-field>
+            <!-- <h2>Hierarchy Scope</h2>
+            <p>The <i>hierarchy scope</i> identifies where the exchanged information fits within the role based equipment
+            hierarchy. It defines the scope of the exchanged information, such as site area or area for which the information
+            is relevant. The <i>hierarchy scope</i> also identifies the associated instance in the role based equipment
+            hierarchy.</p>
+            <mat-form-field formGroupName="hierarchyScope" appearance="outline">
+                <mat-label>Equipment Level</mat-label>
+                <mat-select formControlName="equipmentLevel">
+                    <mat-option *ngFor="let option of equipmentElementLevelType" value="{{option}}">
+                        {{option}}
+                    </mat-option>
+                </mat-select>
+                <mat-hint>Objects in the information which required unique identificaitons contain an ID attribute</mat-hint>
+            </mat-form-field> -->
+            <app-hierarchy-scope [form]="form"></app-hierarchy-scope>
+            <h2>Relationships</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>Operational Location Class</mat-label>
+                <mat-chip-list #chipList aria-label="Class selection">
+                    <mat-chip *ngFor="let fruit of form.controls['operationalLocationClass'].value"
+                        (removed)="remove(fruit)"> {{fruit}}
+                        <button matChipRemove>
+                            <mat-icon>cancel</mat-icon>
+                        </button>
+                    </mat-chip>
+                    <input placeholder="Add related operational location class..." #fruitInput formControlName="predicate" [matAutocomplete]="auto"
+                        [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        (matChipInputTokenEnd)="addClass($event)">
+                </mat-chip-list>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                    <mat-option *ngFor="let fruit of operationalLocationClassFilter$ | async" [value]="fruit.id">
+                        {{fruit.id}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <button mat-stroked-button type="submit" [disabled]="!form.valid" fxFlex="20">Add new operational class</button>
+        </div>
+    </form>
+    <pre>{{form.value | json}}</pre>
+</div>
