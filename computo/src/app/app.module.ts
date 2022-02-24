@@ -33,6 +33,7 @@ import { OperationalLocationClassAddComponent } from './operational-location/ope
 import { OperationalLocationClassUpdateComponent } from './operational-location/operational-location-class-update/operational-location-class-update.component';
 import { HierarchyScopeComponent } from './common/hierarchy-scope/hierarchy-scope.component';
 import { RelationshipComponent } from './common/relationship/relationship.component';
+import { IdentificationComponent } from './common/identification/identification.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { RelationshipComponent } from './common/relationship/relationship.compon
     OperationalLocationClassUpdateComponent,
     HierarchyScopeComponent,
     RelationshipComponent,
+    IdentificationComponent,
   ],
   imports: [
     BrowserModule,

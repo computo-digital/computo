@@ -6,37 +6,27 @@
                 A representation of a grouping of operational locations with similar
                 characteristics for a definite purpose such as manufacturing operations
                 definition, scheduling, capability and performance shall be presented as an
-                operational location class. Any operational location may be a member of 
+                operational location class. Any operational location may be a member of
                 zero or more operational
                 location classes.
             </p>
-            <mat-form-field appearance="outline">
-                <mat-label>ID</mat-label>
-                <input matInput formControlName="id" #id maxlength="64"
-                    placeholder="Ex. LC-MIL for Mill/Grinding Operational Location Class." autocomplete="off" required
-                    oninput="this.value = this.value.toUpperCase()">
-                <mat-hint>Objects in the information which required unique identificaitons contain an ID attribute</mat-hint>
-                <mat-hint align="end">{{id.value.length}} / 64</mat-hint>
-                <div *ngIf="objectId" matSuffix>
-                    <mat-error *ngIf="objectId.hasError('exists')">
-                        <strong>Already exists, try something different.</strong>
-                    </mat-error>
-                    <mat-error *ngIf="objectId.hasError('required')">
-                        ID* <strong>required</strong>
-                    </mat-error>
-                </div>
-            </mat-form-field>
+            <app-identification [form]="form" collectionName="OperationalLocationClass"></app-identification>
             <mat-form-field appearance="outline">
                 <mat-label>Description</mat-label>
-                <textarea matInput formControlName="description" rows="4" required #description maxlength="256"
+                <textarea matInput formControlName="description" rows="4" #description maxlength="256"
                     placeholder="Short description of class." autocomplete="off"></textarea>
                 <mat-hint align="end">{{description.value.length}} / 256</mat-hint>
+                <mat-hint>Objects in the information model which required unique identificaitons contain an ID attribute
+                    and description</mat-hint>
             </mat-form-field>
             <app-hierarchy-scope [form]="form"></app-hierarchy-scope>
             <h2>Relationships</h2>
-            <app-relationship [form]="form" label="Operational Location Class" collectionName="OperationalLocationClass" relationshipName="operationalLocationClass"></app-relationship>
-            <app-relationship [form]="form" label="Operational Location" collectionName="OperationalLocation" relationshipName="operationalLocationID"></app-relationship>
-            <button mat-stroked-button type="submit" [disabled]="!form.valid" fxFlex="20">Add new operational class</button>
+            <app-relationship [form]="form" label="Operational Location Class" collectionName="OperationalLocationClass"
+                relationshipName="operationalLocationClass"></app-relationship>
+            <app-relationship [form]="form" label="Operational Location" collectionName="OperationalLocation"
+                relationshipName="operationalLocationID"></app-relationship>
+            <button mat-stroked-button type="submit" [disabled]="!form.valid">Add new operational class</button>
+            <pre>{{form.value | json}}</pre>
         </div>
     </form>
 </div>

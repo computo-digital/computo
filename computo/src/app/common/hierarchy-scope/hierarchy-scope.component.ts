@@ -14,13 +14,10 @@ import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material
 export class HierarchyScopeComponent implements OnInit {
 
   @Input() form: FormGroup;
-
   autocompleteForm = new FormControl();
-
   private equipmentCollection: AngularFirestoreCollection<EquipmentType>;
   equipment$: Observable<EquipmentType[]>;
   equipmentFilter$: Observable<EquipmentType[]>;
-
   equipmentElementLevelType = EquipmentElementLevelType;
 
   constructor(private store: AngularFirestore) { 
