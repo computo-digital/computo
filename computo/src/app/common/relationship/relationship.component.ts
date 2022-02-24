@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { OperationalLocationClassType } from '../../types/operational-location';
 import { Router } from '@angular/router';
 import { of, map, take, startWith, filter, scan, combineLatest, forkJoin } from 'rxjs';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 
 @Component({
@@ -20,29 +20,34 @@ export class RelationshipComponent implements OnInit {
   @Input() label: string;
   @Input() collectionName: string;
   @Input() relationshipName: string;
+  @ViewChild('autoTrigger', { read: MatAutocompleteTrigger })
+  autoTrigger: MatAutocompleteTrigger;
+
   @ViewChild('relationshipInput') relationshipInput: ElementRef<HTMLInputElement>;
-  private operationalLocationClassCollection: AngularFirestoreCollection<any>;
-  autocompleteForm = new FormControl();
-  separatorKeysCodes: number[] = [ENTER, COMMA];
-  operationalLocationClass$: Observable<any[]>;
-  operationalLocationClassFilter$: Observable<any[]>;
+  private collection: AngularFirestoreCollection<any>;
+  predicate = new FormControl();
+  separator: number[] = [ENTER, COMMA];
+  collection$: Observable<any[]>;
+  filter$: Observable<any[]>;
 
   constructor(
     private store: AngularFirestore
   ) { }
 
   ngOnInit(): void {
-    this.operationalLocationClassCollection = this.store.collection<any>(this.collectionName);
-    this.operationalLocationClass$ = this.operationalLocationClassCollection.valueChanges({ idField: 'document' });
+    this.collection = this.store.collection<any>(this.collectionName);
+    this.collection$ = this.collection.valueChanges({ idField: 'document' });
 
     const operationalLocationClassObservables$ = {
-      data: this.operationalLocationClass$,
-      predicate: this.autocompleteForm.valueChanges.pipe(startWith(''))
+      data: this.collection$,
+      predicate: this.predicate.valueChanges.pipe(startWith(''))
     }
 
-    this.operationalLocationClassFilter$ = combineLatest(operationalLocationClassObservables$).pipe(
+    this.filter$ = combineLatest(operationalLocationClassObservables$).pipe(
       map(observables => observables.data.filter(data => data.id.toLowerCase().includes(observables.predicate)))
     );
+
+    this.predicate.valueChanges.subscribe(changes => console.log('form change', changes));
   }
 
   add(event: MatChipInputEvent): void {
@@ -53,7 +58,7 @@ export class RelationshipComponent implements OnInit {
     }
 
     event.chipInput!.clear();
-    this.autocompleteForm.setValue(null);
+    this.predicate.setValue(null);
   }
 
   remove(relationship: string): void {
@@ -67,8 +72,12 @@ export class RelationshipComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent): void {
     this.form.controls[this.relationshipName].value.push(event.option.viewValue);
     this.relationshipInput.nativeElement.value = '';
-    this.autocompleteForm.setValue('');
-    
+    this.predicate.setValue('');
   }
+
+  openAutocomplete() {
+    this.autoTrigger.openPanel();
+  }
+
 
 }
