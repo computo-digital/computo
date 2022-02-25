@@ -23,8 +23,7 @@ export class OperationalLocationClassAddComponent implements OnInit {
       equipmentLevel: ['']
     }),
     operationalLocationClass: [[]],
-    operationalLocationID: [[]],
-    predicate: ['']
+    operationalLocationID: [[]]
   });
 
   get objectId() {

@@ -1,0 +1,7 @@
+.container {
+    padding: 24px;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+    color: greenyellow !important;
+}

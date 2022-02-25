@@ -11,7 +11,7 @@
         <mat-label>Equipment ID</mat-label>
         <input type="text" placeholder="Select a equipment id of enterprise, site, area, or work centre." matInput [formControl]="autocompleteForm"
             [matAutocomplete]="auto" required>
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="setEquipmentID($event)">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="set($event)">
             <mat-option *ngFor="let option of equipmentFilter$ | async" [value]="option">
                 {{option.equipmentLevel.equipmentLevel}} - {{option.id}}
             </mat-option>

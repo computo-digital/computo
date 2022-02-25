@@ -20,30 +20,36 @@ export class HierarchyScopeComponent implements OnInit {
   equipmentFilter$: Observable<EquipmentType[]>;
   equipmentElementLevelType = EquipmentElementLevelType;
 
-  constructor(private store: AngularFirestore) { 
+  constructor(private store: AngularFirestore) {
     this.equipmentCollection = store.collection<EquipmentType>('Equipment');
     this.equipment$ = this.equipmentCollection.valueChanges({ idField: 'document' });
 
-    const equipmentObservables$ = {
+    const observables$ = {
       data: this.equipment$,
       predicate: this.autocompleteForm.valueChanges.pipe(startWith(''))
     }
 
-    this.equipmentFilter$ = combineLatest(equipmentObservables$).pipe(
+    this.equipmentFilter$ = combineLatest(observables$).pipe(
       map(observables => observables.data.filter(data => data.id.toLowerCase().includes(observables.predicate)))
     );
-    
+
   }
 
   ngOnInit(): void {
+    this.form.statusChanges.subscribe(statue => this.patch());
   }
 
-  setEquipmentID(event: MatAutocompleteSelectedEvent): void {
+  set(event: MatAutocompleteSelectedEvent): void {
     const equipmentID = this.form.get('hierarchyScope.equipmentID');
     const equipmentLevel = this.form.get('hierarchyScope.equipmentLevel');
     equipmentID?.setValue(event.option.value.id);
     equipmentLevel?.setValue(event.option.value.equipmentLevel.equipmentLevel);
-    this.autocompleteForm.setValue(event.option.value.id);
+    // this.autocompleteForm.setValue(event.option.value.id);
   }
-  
+
+  patch() {
+    const equipmentID = this.form.get('hierarchyScope.equipmentID');
+    this.autocompleteForm.setValue(equipmentID?.value);
+  }
+
 }

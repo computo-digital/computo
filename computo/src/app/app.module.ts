@@ -28,9 +28,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { OperationalLocationClassListComponent } from './operational-location/operational-location-class-list/operational-location-class-list.component';
 import { OperationalLocationComponent } from './operational-location/operational-location/operational-location.component';
 import { OperationalLocationClassComponent } from './operational-location/operational-location-class/operational-location-class.component';
-import { OperationalLocationClassPropertiesComponent } from './operational-location/operational-location-class-properties/operational-location-class-properties.component';
 import { OperationalLocationClassAddComponent } from './operational-location/operational-location-class-add/operational-location-class-add.component';
 import { OperationalLocationClassUpdateComponent } from './operational-location/operational-location-class-update/operational-location-class-update.component';
+import { OperationalLocationClassFormComponent } from './operational-location/operational-location-class-form/operational-location-class-form.component';
+
 import { HierarchyScopeComponent } from './common/hierarchy-scope/hierarchy-scope.component';
 import { RelationshipComponent } from './common/relationship/relationship.component';
 import { IdentificationComponent } from './common/identification/identification.component';
@@ -42,9 +43,9 @@ import { IdentificationComponent } from './common/identification/identification.
     OperationalLocationClassListComponent,
     OperationalLocationComponent,
     OperationalLocationClassComponent,
-    OperationalLocationClassPropertiesComponent,
     OperationalLocationClassAddComponent,
     OperationalLocationClassUpdateComponent,
+    OperationalLocationClassFormComponent,
     HierarchyScopeComponent,
     RelationshipComponent,
     IdentificationComponent,

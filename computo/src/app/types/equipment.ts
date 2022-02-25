@@ -14,8 +14,6 @@ export interface EquipmentType {
     equipment: [];
     equipmentClassID: [];
     equipmentCapabilityTestSpecificationID: [];
-
-
 }
 
 export interface EquipmentPropertyType {

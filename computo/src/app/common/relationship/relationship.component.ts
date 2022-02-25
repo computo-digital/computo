@@ -29,6 +29,7 @@ export class RelationshipComponent implements OnInit {
   separator: number[] = [ENTER, COMMA];
   collection$: Observable<any[]>;
   filter$: Observable<any[]>;
+  observables$: any;
 
   constructor(
     private store: AngularFirestore
@@ -38,16 +39,16 @@ export class RelationshipComponent implements OnInit {
     this.collection = this.store.collection<any>(this.collectionName);
     this.collection$ = this.collection.valueChanges({ idField: 'document' });
 
-    const operationalLocationClassObservables$ = {
+    const observables$ = {
       data: this.collection$,
       predicate: this.predicate.valueChanges.pipe(startWith(''))
     }
 
-    this.filter$ = combineLatest(operationalLocationClassObservables$).pipe(
+    this.filter$ = combineLatest(observables$).pipe(
       map(observables => observables.data.filter(data => data.id.toLowerCase().includes(observables.predicate)))
     );
 
-    this.predicate.valueChanges.subscribe(changes => console.log('form change', changes));
+    // this.form.statusChanges.subscribe(statue => this.patch());
   }
 
   add(event: MatChipInputEvent): void {
@@ -75,8 +76,9 @@ export class RelationshipComponent implements OnInit {
     this.predicate.setValue('');
   }
 
-  openAutocomplete() {
-    this.autoTrigger.openPanel();
+  patch() {
+    const relationship = this.form.get(this.relationshipName);
+    this.predicate.setValue(relationship?.value);
   }
 
 

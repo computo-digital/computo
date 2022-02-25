@@ -1,2 +1,27 @@
-<p>operational-location-class-update works!</p>
-<app-operational-location-class-properties></app-operational-location-class-properties>
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="update()" fxLayout="row" fxLayoutAlign="center center">
+        <div fxLayout="column" fxFlex="704px">
+            <h2>Operational location class</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>ID</mat-label>
+                <input matInput formControlName="id">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description" rows="4" #description maxlength="256"
+                    placeholder="Short description of class." autocomplete="off"></textarea>
+                <mat-hint align="end">{{description.value.length}} / 256</mat-hint>
+                <mat-hint>Objects in the information model which required unique identificaitons contain an ID attribute
+                    and description</mat-hint>
+            </mat-form-field>
+            <app-hierarchy-scope [form]="form"></app-hierarchy-scope>
+            <h2>Relationships</h2>
+            <app-relationship [form]="form" label="Operational Location Class" collectionName="OperationalLocationClass"
+                relationshipName="operationalLocationClass"></app-relationship>
+            <app-relationship [form]="form" label="Operational Location" collectionName="OperationalLocation"
+                relationshipName="operationalLocationID"></app-relationship>
+            <button mat-stroked-button type="submit" [disabled]="!form.valid">Update</button>
+            <pre>{{form.value | json}}</pre>
+        </div>
+    </form>
+</div>

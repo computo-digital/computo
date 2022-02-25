@@ -21,11 +21,10 @@ export class IdentificationComponent implements OnInit {
     private store: AngularFirestore,
     private formBuilder: FormBuilder
   ) {
-    this.idForm.statusChanges.subscribe(status => { this.set() });
+    this.idForm.statusChanges.subscribe(status => {this.set()});
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   get objectId() {
     const id = this.idForm.get('id');
