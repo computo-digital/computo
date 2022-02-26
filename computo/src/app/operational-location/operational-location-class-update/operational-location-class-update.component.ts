@@ -12,13 +12,13 @@ import { OperationalLocationClassType, OperationalLocationPropertyType } from '.
 })
 export class OperationalLocationClassUpdateComponent implements OnInit {
 
-  private collection: AngularFirestoreCollection<OperationalLocationClassType>;
-  collection$: Observable<OperationalLocationClassType[]>;
+  // private collection: AngularFirestoreCollection<OperationalLocationClassType>;
+  // collection$: Observable<OperationalLocationClassType[]>;
   private document: AngularFirestoreDocument<OperationalLocationClassType>;
-  private property: AngularFirestoreDocument<OperationalLocationPropertyType>;
+  // private property: AngularFirestoreDocument<OperationalLocationPropertyType>;
   document$: Observable<OperationalLocationClassType | undefined>;
-  property$: Observable<OperationalLocationPropertyType | undefined>;
-  properties$: Observable<OperationalLocationPropertyType[]>;
+  // property$: Observable<OperationalLocationPropertyType | undefined>;
+  // properties$: Observable<OperationalLocationPropertyType[]>;
 
   form = this.builder.group({
     id: ['', Validators.required],
