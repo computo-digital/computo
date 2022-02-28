@@ -7,11 +7,11 @@ import { Observable, of, map, take, startWith, filter, scan, combineLatest, fork
 import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
 
 @Component({
-  selector: 'app-hierarchy-scope',
-  templateUrl: './hierarchy-scope.component.html',
-  styleUrls: ['./hierarchy-scope.component.css']
+  selector: 'app-hierarchy',
+  templateUrl: './hierarchy.component.html',
+  styleUrls: ['./hierarchy.component.css']
 })
-export class HierarchyScopeComponent implements OnInit {
+export class HierarchyComponent implements OnInit {
 
   @Input() form: FormGroup;
   autocompleteForm = new FormControl();

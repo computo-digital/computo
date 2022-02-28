@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HierarchyScopeComponent } from './hierarchy-scope.component';
+import { HierarchyScopeComponent } from './hierarchy.component';
 
 describe('HierarchyScopeComponent', () => {
   let component: HierarchyScopeComponent;

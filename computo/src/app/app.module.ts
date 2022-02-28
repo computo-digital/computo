@@ -32,9 +32,10 @@ import { OperationalLocationClassAddComponent } from './operational-location/ope
 import { OperationalLocationClassUpdateComponent } from './operational-location/operational-location-class-update/operational-location-class-update.component';
 import { OperationalLocationClassFormComponent } from './operational-location/operational-location-class-form/operational-location-class-form.component';
 
-import { HierarchyScopeComponent } from './common/hierarchy-scope/hierarchy-scope.component';
+import { HierarchyComponent } from './common/hierarchy/hierarchy.component';
 import { RelationshipComponent } from './common/relationship/relationship.component';
 import { IdentificationComponent } from './common/identification/identification.component';
+import { PropertyComponent } from './common/property/property.component';
 
 @NgModule({
   declarations: [
@@ -46,9 +47,10 @@ import { IdentificationComponent } from './common/identification/identification.
     OperationalLocationClassAddComponent,
     OperationalLocationClassUpdateComponent,
     OperationalLocationClassFormComponent,
-    HierarchyScopeComponent,
+    HierarchyComponent,
     RelationshipComponent,
     IdentificationComponent,
+    PropertyComponent,
   ],
   imports: [
     BrowserModule,
