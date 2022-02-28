@@ -18,8 +18,8 @@ export class RelationshipComponent implements OnInit {
 
   @Input() form: FormGroup;
   @Input() label: string;
-  @Input() collectionName: string;
-  @Input() relationshipName: string;
+  @Input() path: string;
+  @Input() relationship: string;
   @ViewChild('autoTrigger', { read: MatAutocompleteTrigger })
   autoTrigger: MatAutocompleteTrigger;
 
@@ -36,7 +36,7 @@ export class RelationshipComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.collection = this.store.collection<any>(this.collectionName);
+    this.collection = this.store.collection<any>(this.path);
     this.collection$ = this.collection.valueChanges({ idField: 'document' });
 
     const observables$ = {
@@ -48,14 +48,13 @@ export class RelationshipComponent implements OnInit {
       map(observables => observables.data.filter(data => data.id.toLowerCase().includes(observables.predicate)))
     );
 
-    // this.form.statusChanges.subscribe(statue => this.patch());
   }
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
     if (value) {
-      this.form.controls[this.relationshipName].value.push(value);
+      this.form.controls[this.relationship].value.push(value);
     }
 
     event.chipInput!.clear();
@@ -63,21 +62,21 @@ export class RelationshipComponent implements OnInit {
   }
 
   remove(relationship: string): void {
-    const index = this.form.controls[this.relationshipName].value.indexOf(relationship);
+    const index = this.form.controls[this.relationship].value.indexOf(relationship);
 
     if (index >= 0) {
-      this.form.controls[this.relationshipName].value.splice(index, 1);
+      this.form.controls[this.relationship].value.splice(index, 1);
     }
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    this.form.controls[this.relationshipName].value.push(event.option.viewValue);
+    this.form.controls[this.relationship].value.push(event.option.viewValue);
     this.relationshipInput.nativeElement.value = '';
     this.predicate.setValue('');
   }
 
   patch() {
-    const relationship = this.form.get(this.relationshipName);
+    const relationship = this.form.get(this.relationship);
     this.predicate.setValue(relationship?.value);
   }
 

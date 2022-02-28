@@ -2,7 +2,7 @@
     <mat-form-field appearance="outline">
         <mat-label>{{label}}</mat-label>
         <mat-chip-list #relationshipList>
-            <mat-chip *ngFor="let relationship of form.controls[relationshipName].value"
+            <mat-chip *ngFor="let relationship of form.controls[relationship].value"
                 (removed)="remove(relationship)">
                 {{relationship}}
                 <button matChipRemove>

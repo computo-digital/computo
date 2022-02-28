@@ -10,7 +10,7 @@
                 zero or more operational
                 location classes.
             </p>
-            <app-identification [form]="form" collectionName="OperationalLocationClass"></app-identification>
+            <app-identification [form]="form" path="OperationalLocationClass"></app-identification>
             <mat-form-field appearance="outline">
                 <mat-label>Description</mat-label>
                 <textarea matInput formControlName="description" rows="4" #description maxlength="256"
@@ -21,10 +21,8 @@
             </mat-form-field>
             <app-hierarchy [form]="form"></app-hierarchy>
             <h2>Relationships</h2>
-            <app-relationship [form]="form" label="Operational Location Class" collectionName="OperationalLocationClass"
-                relationshipName="operationalLocationClass"></app-relationship>
-            <app-relationship [form]="form" label="Operational Location" collectionName="OperationalLocation"
-                relationshipName="operationalLocationID"></app-relationship>
+            <app-relationship [form]="form" label="Operational Location Class" path="OperationalLocationClass" relationship="operationalLocationClass"></app-relationship>
+            <app-relationship [form]="form" label="Operational Location" path="OperationalLocation" relationship="operationalLocationID"></app-relationship>
             <button mat-stroked-button type="submit" [disabled]="!form.valid">Add new operational class</button>
             <pre>{{form.value | json}}</pre>
         </div>

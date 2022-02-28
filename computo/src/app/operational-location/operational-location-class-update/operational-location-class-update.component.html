@@ -16,12 +16,13 @@
             </mat-form-field>
             <app-hierarchy [form]="form"></app-hierarchy>
             <h2>Relationships</h2>
-            <app-relationship [form]="form" label="Operational Location Class" collectionName="OperationalLocationClass"
-                relationshipName="operationalLocationClass"></app-relationship>
-            <app-relationship [form]="form" label="Operational Location" collectionName="OperationalLocation"
-                relationshipName="operationalLocationID"></app-relationship>
+            <app-relationship [form]="form" label="Operational Location Class" path="OperationalLocationClass" relationship="operationalLocationClass"></app-relationship>
+            <app-relationship [form]="form" label="Operational Location" path="OperationalLocation" relationship="operationalLocationID"></app-relationship>
             <button mat-stroked-button type="submit" [disabled]="!form.valid">Update</button>
             <pre>{{form.value | json}}</pre>
+        </div>
+        <div fxLayout="column" fxFlex="704px">
+            <app-property [form]="form" label="Operational Location" path="OperationalLocation" relationship="operationalLocationID"></app-property>
         </div>
     </form>
 </div>
