@@ -44,7 +44,6 @@ export class HierarchyComponent implements OnInit {
     const equipmentLevel = this.form.get('hierarchyScope.equipmentLevel');
     equipmentID?.setValue(event.option.value.id);
     equipmentLevel?.setValue(event.option.value.equipmentLevel.equipmentLevel);
-    // this.autocompleteForm.setValue(event.option.value.id);
   }
 
   patch() {

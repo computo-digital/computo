@@ -11,7 +11,7 @@ import { Observable, map, take } from 'rxjs';
 export class IdentificationComponent implements OnInit {
 
   @Input() form: FormGroup;
-  @Input() collectionName: string;
+  @Input() path: string;
 
   idForm = this.formBuilder.group({
     id: ['', Validators.required, this.exists()]
@@ -33,7 +33,7 @@ export class IdentificationComponent implements OnInit {
 
   private exists(): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> => {
-      return this.store.collection(this.collectionName, ref => ref.where('id', "==", control.value)).valueChanges().pipe(
+      return this.store.collection(this.path, ref => ref.where('id', "==", control.value)).valueChanges().pipe(
         take(1),
         map(res => { return res.length > 0 ? { exists: true } : null })
       )

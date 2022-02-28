@@ -1,16 +1,8 @@
-<div [formGroup]="form" fxLayout="column" fxFlex="704px">
-    <h2>Hierarchy Scope</h2>
-    <p>
-        The <i>hierarchy scope</i> identifies where the exchanged information
-        fits within the role based equipment hierarchy. It defines the scope 
-        of the exchanged information, such as site area or area for which the
-        information is relevant. The <i>hierarchy scope</i> also identifies 
-        the associated instance in the role based equipment hierarchy.
-    </p>
+<div [formGroup]="form" fxLayout="column">
     <mat-form-field appearance="outline">
         <mat-label>Equipment ID</mat-label>
-        <input type="text" placeholder="Select a equipment id of enterprise, site, area, or work centre." matInput [formControl]="autocompleteForm"
-            [matAutocomplete]="auto" required>
+        <input type="text" placeholder="Select a equipment id of enterprise, site, area, or work centre." matInput
+            [formControl]="autocompleteForm" [matAutocomplete]="auto" required>
         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="set($event)">
             <mat-option *ngFor="let option of equipmentFilter$ | async" [value]="option">
                 {{option.equipmentLevel.equipmentLevel}} - {{option.id}}

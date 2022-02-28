@@ -93,65 +93,65 @@ export interface HierarchyScopeType {
 // ]
 
 
-// // export let DataTypeType = [
-// //     "Amount",
-// //     "BinaryObject",
-// //     "Code",
-// //     "DateTime",
-// //     "Identifier",
-// //     "Indicator",
-// //     "Measure",
-// //     "Numeric",
-// //     "Quantity",
-// //     "Text",
-// //     "string",
-// //     "byte",
-// //     "unsignedByte",
-// //     "binary",
-// //     "integer",
-// //     "positiveInteger",
-// //     "negativeInteger",
-// //     "nonNegativeInteger",
-// //     "nonPositiveInteger",
-// //     "int",
-// //     "unsignedInt",
-// //     "long",
-// //     "unsignedLong",
-// //     "short",
-// //     "unsignedShort",
-// //     "decimal",
-// //     "float",
-// //     "double",
-// //     "boolean",
-// //     "time",
-// //     "timeInstant",
-// //     "timePeriod",
-// //     "duration",
-// //     "date",
-// //     "dateTime",
-// //     "month",
-// //     "year",
-// //     "century",
-// //     "recurringDay",
-// //     "recurringDate",
-// //     "recurringDuration",
-// //     "Name",
-// //     "QName",
-// //     "NCName",
-// //     "uriReference",
-// //     "language",
-// //     "ID",
-// //     "IDREF",
-// //     "IDREFS",
-// //     "ENTITY",
-// //     "ENTITIES",
-// //     "NOTATION",
-// //     "NMTOKEN",
-// //     "NMTOKENS",
-// //     "Enumeration",
-// //     "SVG",
-// //     "Other"
-// // ]
+export let DataTypeType = [
+    "Amount",
+    "BinaryObject",
+    "Code",
+    "DateTime",
+    "Identifier",
+    "Indicator",
+    "Measure",
+    "Numeric",
+    "Quantity",
+    "Text",
+    "string",
+    "byte",
+    "unsignedByte",
+    "binary",
+    "integer",
+    "positiveInteger",
+    "negativeInteger",
+    "nonNegativeInteger",
+    "nonPositiveInteger",
+    "int",
+    "unsignedInt",
+    "long",
+    "unsignedLong",
+    "short",
+    "unsignedShort",
+    "decimal",
+    "float",
+    "double",
+    "boolean",
+    "time",
+    "timeInstant",
+    "timePeriod",
+    "duration",
+    "date",
+    "dateTime",
+    "month",
+    "year",
+    "century",
+    "recurringDay",
+    "recurringDate",
+    "recurringDuration",
+    "Name",
+    "QName",
+    "NCName",
+    "uriReference",
+    "language",
+    "ID",
+    "IDREF",
+    "IDREFS",
+    "ENTITY",
+    "ENTITIES",
+    "NOTATION",
+    "NMTOKEN",
+    "NMTOKENS",
+    "Enumeration",
+    "SVG",
+    "Other"
+]
 
 // // Defines the type of the definition of a process segment, operations definition, or operations segment. 
 // // Defined types are:
@@ -649,128 +649,128 @@ export let EquipmentElementLevelType = [
 //     "Other",
 // ]
 
-// export let UnitOfMeasureType = [
-//     {"Name":"degrees C", "Description": "degrees Celsius"},
-//     {"Name":"degrees F", "Description": "degrees Fahrenheit"},
-//     {"Name":"A", "Description": "ampere(s)"},
-//     {"Name":"atm", "Description": "standard atmosphere"},
-//     {"Name":"AU", "Description": "astronomical unit"},
-//     {"Name":"bbl", "Description": "barrel(s)"},
-//     {"Name":"Bcf", "Description": "billion cubic feet (gas flow)"},
-//     {"Name":"Bcfd", "Description": "billion cubic feet per day (gas flow)"},
-//     {"Name":"Bcfy", "Description": "billion cubic feet per year (gas flow)"},
-//     {"Name":"Btu", "Description": "British thermal unit(s)"},
-//     {"Name":"Bunit", "Description": "billion unit(s)"},
-//     {"Name":"c", "Description": "cycle(s)"},
-//     {"Name":"c", "Description": "centi (one-hundredth); prefix only"},
-//     {"Name":"C", "Description": "coulomb(s)"},
-//     {"Name":"cal ", "Description": "calorie(s)"},
-//     {"Name":"cd", "Description": "candela(s)"},
-//     {"Name":"Ci ", "Description": "curie(s)"},
-//     {"Name":"cmil", "Description": "circular mil"},
-//     {"Name":"cp", "Description": "candlepower"},
-//     {"Name":"cpm", "Description": "count(s) per minute"},
-//     {"Name":"cps", "Description": "count(s) per second"},
-//     {"Name":"d ", "Description": "day(s)"},
-//     {"Name":"d", "Description": "deci (one-tenth); prefix only"},
-//     {"Name":"D", "Description": "darcy(s)"},
-//     {"Name":"dB", "Description": "decibel(s)"},
-//     {"Name":"dyn", "Description": "dyne(s)"},
-//     {"Name":"eV ", "Description": "electron volt(s)"},
-//     {"Name":"F", "Description": "fermi(s)"},
-//     {"Name":"F ", "Description": "farad(s)"},
-//     {"Name":"fc", "Description": " footcandle(s)"},
-//     {"Name":"fl oz", "Description": "fluid ounce(s)"},
-//     {"Name":"ft ", "Description": " foot/feet"},
-//     {"Name":"ft/s", "Description": "foot/feet per second"},
-//     {"Name":"ft<sup>2</sup>", "Description": "square foot/feet"},
-//     {"Name":"ft-lbf", "Description": "foot pound(s) (force)"},
-//     {"Name":"g ", "Description": "gram(s)"},
-//     {"Name":"g/t ", "Description": "gram(s) per tonne"},
-//     {"Name":"g, G", "Description": "Gal (gravity constant)"},
-//     {"Name":"G ", "Description": "giga (one billion); prefix only"},
-//     {"Name":"gal", "Description": "gallon(s)"},
-//     {"Name":"Gs", "Description": "gauss"},
-//     {"Name":"h", "Description": "hour(s)"},
-//     {"Name":"ha ", "Description": "hectare(s)"},
-//     {"Name":"H.E.", "Description": "high explosive(s)"},
-//     {"Name":"hp", "Description": " horsepower"},
-//     {"Name":"hp-h", "Description": "horsepower hour"},
-//     {"Name":"Hz", "Description": "cycle(s) per second"},
-//     {"Name":"in Hg", "Description": "inch(es) of mercury"},
-//     {"Name":"in", "Description": "inch(es)"},
-//     {"Name":"in H<sub>2</sub>O", "Description": "inch(es) of water"},
-//     {"Name":"J", "Description": "joule(s)"},
-//     {"Name":"k", "Description": "kilo (one thousand); prefix only"},
-//     {"Name":"K", "Description": "kelvin"},
-//     {"Name":"l", "Description": "liter(s)"},
-//     {"Name":"L", "Description": "liter(s) (preferred form)"},
-//     {"Name":"L", "Description": "lambert(s)"},
-//     {"Name":"lb ", "Description": "pound(s)"},
-//     {"Name":"lbf", "Description": "pound(s) force"},
-//     {"Name":"lbf-ft", "Description": "pound(s) force foot"},
-//     {"Name":"lt", "Description": "long ton(s)"},
-//     {"Name":"m", "Description": "meter"},
-//     {"Name":"m", "Description": "milli (one-thousandth); prefix only"},
-//     {"Name":"M", "Description": "mega (one million)"},
-//     {"Name":"Mcf", "Description": "thousand cubic feet (gas flow)"},
-//     {"Name":"Mcfd", "Description": "thousand cubic feet per day"},
-//     {"Name":"mho", "Description": "mho(s)"},
-//     {"Name":"mi", "Description": "mile(s)"},
-//     {"Name":"mil", "Description": "thousandth of an inch"},
-//     {"Name":"MMbbl", "Description": "million barrels"},
-//     {"Name":"MMcf", "Description": "million cubic feet (gas flow)"},
-//     {"Name":"MMcfd", "Description": "million cubic feet per day (gas flow)"},
-//     {"Name":"MMcfy", "Description": "million cubic feet per year (gas flow)"},
-//     {"Name":"mol", "Description": "mole(s)"},
-//     {"Name":"mol wt", "Description": "mole weight"},
-//     {"Name":"mol %", "Description": "mole percent"},
-//     {"Name":"mpg", "Description": "mile(s) per gallon"},
-//     {"Name":"mph", "Description": "mile(s) per hour"},
-//     {"Name":"Mx", "Description": "maxwell(s)"},
-//     {"Name":"n", "Description": "nano (one-billionth); prefix only"},
-//     {"Name":"n", "Description": "refractive index"},
-//     {"Name":"N", "Description": "Newton(s)"},
-//     {"Name":"nmi", "Description": "nautical mile(s)"},
-//     {"Name":"Oe", "Description": "oersted(s)"},
-//     {"Name":"ohm-cmil/ft", "Description": "ohm circular mil per foot"},
-//     {"Name":"oz", "Description": "ounce(s)"},
-//     {"Name":"p", "Description": "pico (one-trillionth); prefix only"},
-//     {"Name":"P", "Description": "poise(s)"},
-//     {"Name":"Pa", "Description": "pascal(s)"},
-//     {"Name":"pct", "Description": "percent"},
-//     {"Name":"ppb", "Description": "part(s) per billion"},
-//     {"Name":"ppm", "Description": "part(s) per million"},
-//     {"Name":"psi", "Description": "pound(s) (force) per square inch"},
-//     {"Name":"psia", "Description": "pound(s) force per square inch, absolute"},
-//     {"Name":"psig", "Description": "pound(s) force per square inch, gauge"},
-//     {"Name":"r", "Description": "revolution(s)"},
-//     {"Name":"R", "Description": "roentgen(s)"},
-//     {"Name":"rad", "Description": "radian(s)"},
-//     {"Name":"rpm", "Description": "revolutions per minute"},
-//     {"Name":"s", "Description": "second(s)"},
-//     {"Name":"S", "Description": "siemens(s)"},
-//     {"Name":"sr", "Description": "steradian(s)"},
-//     {"Name":"st", "Description": "stere(s)"},
-//     {"Name":"st", "Description": "short ton(s)"},
-//     {"Name":"St", "Description": "stokes"},
-//     {"Name":"std ft<sup>3</sup>", "Description": "standard cubic foot/feet"},
-//     {"Name":"t", "Description": "metric ton(s)"},
-//     {"Name":"t/w-h", "Description": "metric ton(s) per worker hour"},
-//     {"Name":"t/w-d", "Description": "metric ton(s) per worker day"},
-//     {"Name":"T", "Description": "tesla(s)"},
-//     {"Name":"tr oz", "Description": "troy ounce(s)"},
-//     {"Name":"unit<sup>-1</sup>", "Description": "reciprocal unit"},
-//     {"Name":"unit<sup>2</sup>", "Description": "square unit (or unit squared)"},
-//     {"Name":"unit<sup>3</sup>", "Description": "cubic unit"},
-//     {"Name":"W", "Description": "watt(s)"},
-//     {"Name":"kW", "Description": "Kilowatt(s)"},
-//     {"Name":"MW", "Description": "Megawatt(s)"},
-//     {"Name":"Wb", "Description": "weber(s)"},
-//     {"Name":"wt %, wt pct", "Description": "weight percent"},
-//     {"Name":"yd", "Description": "yard(s)"},
-//     {"Name":"yr", "Description": "year(s)"},
-// ]
+export let UnitOfMeasureType = [
+    {"value":"degrees C", "description": "degrees Celsius"},
+    {"value":"degrees F", "description": "degrees Fahrenheit"},
+    {"value":"A", "description": "ampere(s)"},
+    {"value":"atm", "description": "standard atmosphere"},
+    {"value":"AU", "description": "astronomical unit"},
+    {"value":"bbl", "description": "barrel(s)"},
+    {"value":"Bcf", "description": "billion cubic feet (gas flow)"},
+    {"value":"Bcfd", "description": "billion cubic feet per day (gas flow)"},
+    {"value":"Bcfy", "description": "billion cubic feet per year (gas flow)"},
+    {"value":"Btu", "description": "British thermal unit(s)"},
+    {"value":"Bunit", "description": "billion unit(s)"},
+    {"value":"c", "description": "cycle(s)"},
+    {"value":"c", "description": "centi (one-hundredth); prefix only"},
+    {"value":"C", "description": "coulomb(s)"},
+    {"value":"cal ", "description": "calorie(s)"},
+    {"value":"cd", "description": "candela(s)"},
+    {"value":"Ci ", "description": "curie(s)"},
+    {"value":"cmil", "description": "circular mil"},
+    {"value":"cp", "description": "candlepower"},
+    {"value":"cpm", "description": "count(s) per minute"},
+    {"value":"cps", "description": "count(s) per second"},
+    {"value":"d ", "description": "day(s)"},
+    {"value":"d", "description": "deci (one-tenth); prefix only"},
+    {"value":"D", "description": "darcy(s)"},
+    {"value":"dB", "description": "decibel(s)"},
+    {"value":"dyn", "description": "dyne(s)"},
+    {"value":"eV ", "description": "electron volt(s)"},
+    {"value":"F", "description": "fermi(s)"},
+    {"value":"F ", "description": "farad(s)"},
+    {"value":"fc", "description": " footcandle(s)"},
+    {"value":"fl oz", "description": "fluid ounce(s)"},
+    {"value":"ft ", "description": " foot/feet"},
+    {"value":"ft/s", "description": "foot/feet per second"},
+    {"value":"ft<sup>2</sup>", "description": "square foot/feet"},
+    {"value":"ft-lbf", "description": "foot pound(s) (force)"},
+    {"value":"g ", "description": "gram(s)"},
+    {"value":"g/t ", "description": "gram(s) per tonne"},
+    {"value":"g, G", "description": "Gal (gravity constant)"},
+    {"value":"G ", "description": "giga (one billion); prefix only"},
+    {"value":"gal", "description": "gallon(s)"},
+    {"value":"Gs", "description": "gauss"},
+    {"value":"h", "description": "hour(s)"},
+    {"value":"ha ", "description": "hectare(s)"},
+    {"value":"H.E.", "description": "high explosive(s)"},
+    {"value":"hp", "description": " horsepower"},
+    {"value":"hp-h", "description": "horsepower hour"},
+    {"value":"Hz", "description": "cycle(s) per second"},
+    {"value":"in Hg", "description": "inch(es) of mercury"},
+    {"value":"in", "description": "inch(es)"},
+    {"value":"in H<sub>2</sub>O", "description": "inch(es) of water"},
+    {"value":"J", "description": "joule(s)"},
+    {"value":"k", "description": "kilo (one thousand); prefix only"},
+    {"value":"K", "description": "kelvin"},
+    {"value":"l", "description": "liter(s)"},
+    {"value":"L", "description": "liter(s) (preferred form)"},
+    {"value":"L", "description": "lambert(s)"},
+    {"value":"lb ", "description": "pound(s)"},
+    {"value":"lbf", "description": "pound(s) force"},
+    {"value":"lbf-ft", "description": "pound(s) force foot"},
+    {"value":"lt", "description": "long ton(s)"},
+    {"value":"m", "description": "meter"},
+    {"value":"m", "description": "milli (one-thousandth); prefix only"},
+    {"value":"M", "description": "mega (one million)"},
+    {"value":"Mcf", "description": "thousand cubic feet (gas flow)"},
+    {"value":"Mcfd", "description": "thousand cubic feet per day"},
+    {"value":"mho", "description": "mho(s)"},
+    {"value":"mi", "description": "mile(s)"},
+    {"value":"mil", "description": "thousandth of an inch"},
+    {"value":"MMbbl", "description": "million barrels"},
+    {"value":"MMcf", "description": "million cubic feet (gas flow)"},
+    {"value":"MMcfd", "description": "million cubic feet per day (gas flow)"},
+    {"value":"MMcfy", "description": "million cubic feet per year (gas flow)"},
+    {"value":"mol", "description": "mole(s)"},
+    {"value":"mol wt", "description": "mole weight"},
+    {"value":"mol %", "description": "mole percent"},
+    {"value":"mpg", "description": "mile(s) per gallon"},
+    {"value":"mph", "description": "mile(s) per hour"},
+    {"value":"Mx", "description": "maxwell(s)"},
+    {"value":"n", "description": "nano (one-billionth); prefix only"},
+    {"value":"n", "description": "refractive index"},
+    {"value":"N", "description": "Newton(s)"},
+    {"value":"nmi", "description": "nautical mile(s)"},
+    {"value":"Oe", "description": "oersted(s)"},
+    {"value":"ohm-cmil/ft", "description": "ohm circular mil per foot"},
+    {"value":"oz", "description": "ounce(s)"},
+    {"value":"p", "description": "pico (one-trillionth); prefix only"},
+    {"value":"P", "description": "poise(s)"},
+    {"value":"Pa", "description": "pascal(s)"},
+    {"value":"pct", "description": "percent"},
+    {"value":"ppb", "description": "part(s) per billion"},
+    {"value":"ppm", "description": "part(s) per million"},
+    {"value":"psi", "description": "pound(s) (force) per square inch"},
+    {"value":"psia", "description": "pound(s) force per square inch, absolute"},
+    {"value":"psig", "description": "pound(s) force per square inch, gauge"},
+    {"value":"r", "description": "revolution(s)"},
+    {"value":"R", "description": "roentgen(s)"},
+    {"value":"rad", "description": "radian(s)"},
+    {"value":"rpm", "description": "revolutions per minute"},
+    {"value":"s", "description": "second(s)"},
+    {"value":"S", "description": "siemens(s)"},
+    {"value":"sr", "description": "steradian(s)"},
+    {"value":"st", "description": "stere(s)"},
+    {"value":"st", "description": "short ton(s)"},
+    {"value":"St", "description": "stokes"},
+    {"value":"std ft<sup>3</sup>", "description": "standard cubic foot/feet"},
+    {"value":"t", "description": "metric ton(s)"},
+    {"value":"t/w-h", "description": "metric ton(s) per worker hour"},
+    {"value":"t/w-d", "description": "metric ton(s) per worker day"},
+    {"value":"T", "description": "tesla(s)"},
+    {"value":"tr oz", "description": "troy ounce(s)"},
+    {"value":"unit<sup>-1</sup>", "description": "reciprocal unit"},
+    {"value":"unit<sup>2</sup>", "description": "square unit (or unit squared)"},
+    {"value":"unit<sup>3</sup>", "description": "cubic unit"},
+    {"value":"W", "description": "watt(s)"},
+    {"value":"kW", "description": "Kilowatt(s)"},
+    {"value":"MW", "description": "Megawatt(s)"},
+    {"value":"Wb", "description": "weber(s)"},
+    {"value":"wt %, wt pct", "description": "weight percent"},
+    {"value":"yd", "description": "yard(s)"},
+    {"value":"yr", "description": "year(s)"},
+]
 
 
 // export let HierarchyScopeType = [
@@ -794,178 +794,178 @@ export let EquipmentElementLevelType = [
 // export let DataTypeType = [
 //     {
 //         "Name": "Binary",
-//         "Description": "Binary is a finite sequence of binary digits (bits)."
+//         "description": "Binary is a finite sequence of binary digits (bits)."
 //     },
 //     {
 //         "Name": "Boolean",
-//         "Description": "Boolean denotes a logical condition through a predefined enumeration of the literals true (The Boolean condition is satisfied) and false (The Boolean condition is not satisfied).."
+//         "description": "Boolean denotes a logical condition through a predefined enumeration of the literals true (The Boolean condition is satisfied) and false (The Boolean condition is not satisfied).."
 //     },
 //     {
 //         "Name": "Decimal",
-//         "Description": "Decimal is a subset of the real numbers, which can be represented by decimal numerals."
+//         "description": "Decimal is a subset of the real numbers, which can be represented by decimal numerals."
 //     },
 //     {
 //         "Name": "Double",
-//         "Description": "Double is the IEEE double precision 64 bits floating point type."
+//         "description": "Double is the IEEE double precision 64 bits floating point type."
 //     },
 //     {
 //         "Name": "Float",
-//         "Description": "Float is the IEEE simple precision 32 bits floating point type."
+//         "description": "Float is the IEEE simple precision 32 bits floating point type."
 //     },
 //     {
 //         "Name": "Integer",
-//         "Description": "Integer is a value in the infinite set (...-2, -1, 0, 1, 2...), a denumerably infinite list."
+//         "description": "Integer is a value in the infinite set (...-2, -1, 0, 1, 2...), a denumerably infinite list."
 //     },
 //     {
 //         "Name": "String",
-//         "Description": "String is a sequence of characters in some suitable character set."
+//         "description": "String is a sequence of characters in some suitable character set."
 //     },
 //     {
 //         "Name": "TimeDuration",
-//         "Description": "TimeDuration identifies a length of time in various time units as used in the Gregorian calendar: year, month, week, day, hour, minute, second, and fractions thereof. ."
+//         "description": "TimeDuration identifies a length of time in various time units as used in the Gregorian calendar: year, month, week, day, hour, minute, second, and fractions thereof. ."
 //     },
 //     {
 //         "Name": "TimePoint",
-//         "Description": "TimePoint is a point in time to various common resolutions: year, month, week, day, hour, minute, second, and fractions thereof.."
+//         "description": "TimePoint is a point in time to various common resolutions: year, month, week, day, hour, minute, second, and fractions thereof.."
 //     }, 
 //     {
 //         "Name": "Token",
-//         "Description": "A token is a string that does not contain the line feed (#xA) nor tab (#x9) characters, that have no leading or trailing spaces (#x20) and that have no internal sequences of two or more spaces.."
+//         "description": "A token is a string that does not contain the line feed (#xA) nor tab (#x9) characters, that have no leading or trailing spaces (#x20) and that have no internal sequences of two or more spaces.."
 //     },
 //     {
 //         "Name": "Enumeration",
-//         "Description": "Defines a specified set of values."
+//         "description": "Defines a specified set of values."
 //     },
 //     {
 //         "Name": "FractionalDigits",
-//         "Description": "Defines the maximum number of fractional digits to be used."
+//         "description": "Defines the maximum number of fractional digits to be used."
 //     },
 //     {
 //         "Name": "Length",
-//         "Description": "Defines the number of units of length of the data type."
+//         "description": "Defines the number of units of length of the data type."
 //     },
 //     {
 //         "Name": "MaximumExclusive",
-//         "Description": "Defines the upper limit of the range of allowed values. The upper limit is no allowed value.."
+//         "description": "Defines the upper limit of the range of allowed values. The upper limit is no allowed value.."
 //     },
 //     {
 //         "Name": "MaximumInclusive",
-//         "Description": "Defines the upper limit of the range of allowed values. The upper limit is also an allowed value."
+//         "description": "Defines the upper limit of the range of allowed values. The upper limit is also an allowed value."
 //     },
 //     {
 //         "Name": "MaximumLength",
-//         "Description": "Defines the maximum number of units of length."
+//         "description": "Defines the maximum number of units of length."
 //     },
 //     {
 //         "Name": "MinimumLength",
-//         "Description": "Defines the minimum number of units of length."
+//         "description": "Defines the minimum number of units of length."
 //     },
 //     {
 //         "Name": "MinimumExclusive",
-//         "Description": "Defines the lower limit of the range of allowed values. The lower limit is no allowed value."
+//         "description": "Defines the lower limit of the range of allowed values. The lower limit is no allowed value."
 //     },
 //     {
 //         "Name": "MinimumInclusive",
-//         "Description": "Defines the lower limit of the range of allowed values. The lower limit is also an allowed value."
+//         "description": "Defines the lower limit of the range of allowed values. The lower limit is also an allowed value."
 //     },
 //     {
 //         "Name": "Pattern",
-//         "Description": "Defines a constraint on the lexical space of a datatype to literals in a specific pattern."
+//         "description": "Defines a constraint on the lexical space of a datatype to literals in a specific pattern."
 //     },
 //     {
 //         "Name": "TotalDigits",
-//         "Description": "Defines a maximum number of digits to be used."
+//         "description": "Defines a maximum number of digits to be used."
 //     },
 //     {
 //         "Name": "Amount",
-//         "Description": "An amount is a number of monetary units specified in a currency."
+//         "description": "An amount is a number of monetary units specified in a currency."
 //     },
 //     {
 //         "Name": "Code",
-//         "Description": "A code is a character string of letters, numbers, special characters (except escape sequences), and symbols. It represents a definitive value, a method, or a property description in an abbreviated or language-independent form that is part of a finite list of allowed values."
+//         "description": "A code is a character string of letters, numbers, special characters (except escape sequences), and symbols. It represents a definitive value, a method, or a property description in an abbreviated or language-independent form that is part of a finite list of allowed values."
 //     },
 //     {
 //         "Name": "Date",
-//         "Description": "A date is a Gregorian calendar representation in various common resolutions: year, month, week, day."
+//         "description": "A date is a Gregorian calendar representation in various common resolutions: year, month, week, day."
 
 //     },
 //     {
 //         "Name": "DateTime",
-//         "Description": "A date time identifies a date and time of day to various common resolutions: year, month, week, day, hour, minute, second, and fraction of second."
+//         "description": "A date time identifies a date and time of day to various common resolutions: year, month, week, day, hour, minute, second, and fraction of second."
 //     },
 //     {
 //         "Name": "Duration",
-//         "Description": "A duration is the specification of a length of time without a fixed start or end time, expressed in Gregorian calendar time units (Year, Month, Week, Day) and Hours, Minutes or Seconds."
+//         "description": "A duration is the specification of a length of time without a fixed start or end time, expressed in Gregorian calendar time units (Year, Month, Week, Day) and Hours, Minutes or Seconds."
 //     },
 //     {
 //         "Name": "Graphic",
-//         "Description": "A graphic is a diagram, a graph, mathematical curves, or similar vector based representation in binary notation (octets)."
+//         "description": "A graphic is a diagram, a graph, mathematical curves, or similar vector based representation in binary notation (octets)."
 //     },
 //     {
 //         "Name": "Identifier",
-//         "Description": "An identifier is a character string used to uniquely identify one instance of an object within an identification scheme that is managed by an agency."
+//         "description": "An identifier is a character string used to uniquely identify one instance of an object within an identification scheme that is managed by an agency."
 //     },
 //     {
 //         "Name": "Indicator",
-//         "Description": "An indicator is a list of two mutually exclusive Boolean values that express the only possible states of a property."
+//         "description": "An indicator is a list of two mutually exclusive Boolean values that express the only possible states of a property."
 //     },
 //     {
 //         "Name": "Measure",
-//         "Description": "A measure is a numeric value determined by measuring an object along with the specified unit of measure."
+//         "description": "A measure is a numeric value determined by measuring an object along with the specified unit of measure."
 //     },
 //     {
 //         "Name": "Name",
-//         "Description": "A name is a word or phrase that constitutes the distinctive designation of a person, place, thing or concept.."
+//         "description": "A name is a word or phrase that constitutes the distinctive designation of a person, place, thing or concept.."
 
 //     },
 //     {
 //         "Name": "Number",
-//         "Description": "A mathematical number that is assigned or is determined by calculation.."
+//         "description": "A mathematical number that is assigned or is determined by calculation.."
 //     },
 //     {
 //         "Name": "Ordinal",
-//         "Description": "An ordinal number is an assigned mathematical number that represents order or sequence."
+//         "description": "An ordinal number is an assigned mathematical number that represents order or sequence."
 //     },
 //     {
 //         "Name": "Percent",
-//         "Description": "A percent is a value representing a fraction of one hundred, expressed as a quotient."
+//         "description": "A percent is a value representing a fraction of one hundred, expressed as a quotient."
 
 //     },
 //     {
 //         "Name": "Picture",
-//         "Description": "A picture is a visual representation of a person, object, or scene in binary notation (octets)."
+//         "description": "A picture is a visual representation of a person, object, or scene in binary notation (octets)."
 //     },
 //     {
 //         "Name": "Quantity",
-//         "Description": "A quantity is a counted number of non-monetary units, possibly including fractions."
+//         "description": "A quantity is a counted number of non-monetary units, possibly including fractions."
 //     },
 //     {
 //         "Name": "Rate",
-//         "Description": "A rate is a quantity, amount, frequency, or dimensionless factor, measured against an independent base unit, expressed as a quotient."
+//         "description": "A rate is a quantity, amount, frequency, or dimensionless factor, measured against an independent base unit, expressed as a quotient."
 //     },
 //     {
 //         "Name": "Ratio",
-//         "Description": "A ratio is a relation between two independent quantities, using the same unit of measure or currency. A ratio can be expressed as either a quotient showing the number of times one value contains or is contained within the other, or as a proportion."
+//         "description": "A ratio is a relation between two independent quantities, using the same unit of measure or currency. A ratio can be expressed as either a quotient showing the number of times one value contains or is contained within the other, or as a proportion."
 //     },
 //     {
 //         "Name": "Sound",
-//         "Description": "A sound is any form of an audio file such as audio recordings in binary notation (octets)."
+//         "description": "A sound is any form of an audio file such as audio recordings in binary notation (octets)."
 //     },
 //     {
 //         "Name": "Text",
-//         "Description": "Text is a character string such as a finite set of characters generally in the form of words of a language."
+//         "description": "Text is a character string such as a finite set of characters generally in the form of words of a language."
 //     },
 //     {
 //         "Name": "Time",
-//         "Description": "Time is a time of day to various common resolutions – hour, minute, second and fractions thereof."
+//         "description": "Time is a time of day to various common resolutions – hour, minute, second and fractions thereof."
 //     },
 //     {
 //         "Name": "Value",
-//         "Description": "A value is the concept of worth in general that is assigned or is determined by measurement, assessment or calculation."
+//         "description": "A value is the concept of worth in general that is assigned or is determined by measurement, assessment or calculation."
 //     },
 //     {
 //         "Name": "Video",
-//         "Description": "A video is a recording, reproducing or broadcasting of visual images on magnetic tape or digitally in binary notation (octets)."
+//         "description": "A video is a recording, reproducing or broadcasting of visual images on magnetic tape or digitally in binary notation (octets)."
 //     }
 // ]
 // // Describes the category of the activity. 

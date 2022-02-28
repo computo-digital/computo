@@ -14,8 +14,8 @@ export class OperationalLocationClassListComponent implements OnInit {
   documents: Observable<OperationalLocationClassType[]>;
   controls: boolean = false;
   columns: string[] = [
-    'ID', 
-    'Description',
+    'id', 
+    'description',
     'hierarchyScopeEquipmentLevel',
     'hierarchyScopeEquipmentID',
     // 'operationalLocationClass',

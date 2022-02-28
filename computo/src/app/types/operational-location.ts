@@ -38,7 +38,4 @@ export interface OperationalLocationClassPropertyType {
     modified: Date;
     description: string;
     value: string;
-    dataType: string;
-    unitOfMeasure: string;
-    propertyType: [];
 }

@@ -40,8 +40,11 @@ table tr:hover{
     font-weight:bold; 
   }
   
-  .mat-column-weight {
-    font-style: italic;
+  .mat-column-description {
+    max-width: 128px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .mat-column-controls {

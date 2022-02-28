@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { FormBuilder, Validators } from '@angular/forms';
-import { OperationalLocationClassType, OperationalLocationPropertyType } from '../../types/operational-location';
+import { OperationalLocationClassType } from '../../types/operational-location';
 
 @Component({
   selector: 'app-operational-location-class-update',
@@ -12,13 +12,8 @@ import { OperationalLocationClassType, OperationalLocationPropertyType } from '.
 })
 export class OperationalLocationClassUpdateComponent implements OnInit {
 
-  // private collection: AngularFirestoreCollection<OperationalLocationClassType>;
-  // collection$: Observable<OperationalLocationClassType[]>;
-  private document: AngularFirestoreDocument<OperationalLocationClassType>;
-  // private property: AngularFirestoreDocument<OperationalLocationPropertyType>;
+  document: AngularFirestoreDocument<OperationalLocationClassType>;
   document$: Observable<OperationalLocationClassType | undefined>;
-  // property$: Observable<OperationalLocationPropertyType | undefined>;
-  // properties$: Observable<OperationalLocationPropertyType[]>;
 
   form = this.builder.group({
     id: ['', Validators.required],
