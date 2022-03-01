@@ -8,11 +8,11 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Created</mat-label>
-                    <input matInput formControlName="created">
+                    <input disabled matInput value="{{form.get('created')?.value.seconds * 1000  | date:'long'}}">
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Modified</mat-label>
-                    <input matInput formControlName="modified">
+                    <input disabled matInput value="{{form.get('modified')?.value.seconds * 1000 | date:'long'}}">
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Description</mat-label>
@@ -26,8 +26,10 @@
                 <h2>Hierarchy Scope</h2>
                 <app-hierarchy [form]="form"></app-hierarchy>
                 <h2>Relationships</h2>
-                <app-relationship [form]="form" label="Operational Location Class" path="OperationalLocationClass" relationship="operationalLocationClass"></app-relationship>
-                <app-relationship [form]="form" label="Operational Location" path="OperationalLocation" relationship="operationalLocationID"></app-relationship>
+                <app-relationship [form]="form" label="Operational Location Class" path="OperationalLocationClass"
+                    relationship="operationalLocationClass"></app-relationship>
+                <app-relationship [form]="form" label="Operational Location" path="OperationalLocation"
+                    relationship="operationalLocationID"></app-relationship>
                 <button mat-flat-button type="submit" [disabled]="!form.valid" color="primary">Update</button>
             </div>
         </mat-tab>
