@@ -1,4 +1,8 @@
 .container {
+    width: 1200px;
+}
+
+.form {
     padding: 24px;
 }
 

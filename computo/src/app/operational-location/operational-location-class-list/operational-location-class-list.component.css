@@ -3,7 +3,7 @@ table {
 }
 
 header {
-    padding: 24px;
+    /* padding: 24px; */
     background-color: rebeccapurple;
 }
 
@@ -59,3 +59,10 @@ table tr:hover{
     flex: 1 1 auto; 
     height: 100%; 
 }
+/* 
+th.mat-header, td.mat-cell {
+  text-align: center;
+  border: 1px solid #CCC;
+  padding: 0 !important;
+  height: 48px !important;
+} */

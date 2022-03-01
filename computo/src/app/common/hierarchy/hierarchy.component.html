@@ -1,5 +1,5 @@
-<div [formGroup]="form" fxLayout="column">
-    <mat-form-field appearance="outline">
+<div [formGroup]="form" fxLayout="row" fxLayoutGap="24px">
+    <mat-form-field appearance="outline" fxFlex>
         <mat-label>Equipment ID</mat-label>
         <input type="text" placeholder="Select a equipment id of enterprise, site, area, or work centre." matInput
             [formControl]="autocompleteForm" [matAutocomplete]="auto" required>
@@ -8,15 +8,15 @@
                 {{option.equipmentLevel.equipmentLevel}} - {{option.id}}
             </mat-option>
         </mat-autocomplete>
-        <mat-hint>A unique identification of an equipment element the exhcanged information is relevant.</mat-hint>
+        <!-- <mat-hint>A unique identification of an equipment element the exhcanged information is relevant.</mat-hint> -->
     </mat-form-field>
-    <mat-form-field formGroupName="hierarchyScope" appearance="outline">
+    <mat-form-field formGroupName="hierarchyScope" appearance="outline" fxFlex>
         <mat-label>Equipment Level</mat-label>
         <mat-select formControlName="equipmentLevel">
             <mat-option *ngFor="let option of equipmentElementLevelType" value="{{option}}">
                 {{option}}
             </mat-option>
         </mat-select>
-        <mat-hint>Identification of the equipment level if the equipment element is defined.</mat-hint>
+        <mat-hint>Equipment level if the equipment element is defined.</mat-hint>
     </mat-form-field>
 </div>

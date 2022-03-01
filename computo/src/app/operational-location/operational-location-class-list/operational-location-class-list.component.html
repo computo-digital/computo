@@ -3,29 +3,6 @@
     <router-outlet></router-outlet>
   </mat-drawer> -->
   <mat-sidenav-content>
-    <mat-toolbar class="toolbar">
-      <span class="spacer"></span>
-      <div class="row" fxLayoutAlign="center center" fxLayoutGap="24px">
-        <form style="font-size: 12px; padding-top: 16px">
-          <mat-form-field appearance="outline">
-            <mat-icon matPrefix>search</mat-icon>
-            <input matInput value="" autocomplete="off">
-          </mat-form-field>
-        </form>
-        <button mat-flat-button color="primary" [matMenuTriggerFor]="menu">
-          <span>Add</span>
-          <mat-icon>expand_more</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item routerLink="add">
-            <span>Operational location class</span>
-          </button>
-          <button mat-menu-item routerLink="/operational/location/class/add">
-            <span>Operational location</span>
-          </button>
-        </mat-menu>
-      </div>
-    </mat-toolbar>
     <table mat-table [dataSource]="documents$" class="table">
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>ID</th>
