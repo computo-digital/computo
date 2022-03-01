@@ -4,7 +4,6 @@ import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection 
 import { Observable } from 'rxjs';
 import { FormBuilder, Validators } from '@angular/forms';
 import { OperationalLocationClassType } from '../../types/operational-location';
-import { doc } from 'firebase/firestore';
 
 @Component({
   selector: 'app-operational-location-class-update',
@@ -35,13 +34,14 @@ export class OperationalLocationClassUpdateComponent implements OnInit {
     private store: AngularFirestore,
     private builder: FormBuilder,
   ) {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.document = store.doc<OperationalLocationClassType>('OperationalLocationClass/' + id);
-    this.document$ = this.document.valueChanges();
-
-    this.document$.subscribe(document => {
-      this.form.patchValue(document as any);
-      this.form.controls['id'].disable();
+    this.route.params.subscribe(params => {
+      this.document = store.doc<OperationalLocationClassType>('OperationalLocationClass/' + params['id']);
+      this.document$ = this.document.valueChanges();
+  
+      this.document$.subscribe(document => {
+        this.form.patchValue(document as any);
+        this.form.controls['id'].disable();
+      })
     })
   }
 

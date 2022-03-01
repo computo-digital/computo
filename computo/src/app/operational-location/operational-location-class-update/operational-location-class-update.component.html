@@ -25,12 +25,15 @@
                 </mat-form-field>
                 <h2>Hierarchy Scope</h2>
                 <app-hierarchy [form]="form"></app-hierarchy>
-                <h2>Relationships</h2>
+                <button mat-flat-button type="submit" [disabled]="!form.valid" color="primary">Update</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Relationships">
+            <div class="container" fxLayout="column" style="width: 704px;">
                 <app-relationship [form]="form" label="Operational Location Class" path="OperationalLocationClass"
                     relationship="operationalLocationClass"></app-relationship>
                 <app-relationship [form]="form" label="Operational Location" path="OperationalLocation"
                     relationship="operationalLocationID"></app-relationship>
-                <button mat-flat-button type="submit" [disabled]="!form.valid" color="primary">Update</button>
             </div>
         </mat-tab>
         <mat-tab label="Properties">

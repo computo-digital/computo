@@ -22,6 +22,7 @@ export class PropertyComponent implements OnInit {
   private property: AngularFirestoreDocument<any>;
   property$: Observable<any | undefined>;
   properties$: Observable<any[]>;
+  id : string;
   dataTypeType = DataTypeType;
   unitOfMeasureType = UnitOfMeasureType;
   showFiller = false;
@@ -54,14 +55,18 @@ export class PropertyComponent implements OnInit {
     private store: AngularFirestore,
     private builder: FormBuilder,
   ) 
-  {}
+  {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.document = this.store.doc<any>(this.path + '/' + params['id']);
+      this.document.valueChanges().subscribe(document => {
+        this.properties$ = this.document.collection<any>(this.collection).valueChanges({idField: 'document'});
+      })
+    })
+
+  }
 
   ngOnInit(): void {
-    this.document = this.store.doc<any>(this.path + '/' + this.route.snapshot.paramMap.get('id'));
-
-    this.document.valueChanges().subscribe(document => {
-      this.properties$ = this.document.collection<any>(this.collection).valueChanges({idField: 'document'});
-    })
   }
 
   new(drawer: any){
@@ -76,8 +81,9 @@ export class PropertyComponent implements OnInit {
   }
 
   open(drawer: any, document: string) {
-    const path = this.path + '/' + this.route.snapshot.paramMap.get('id') + '/' + this.collection + '/' + document;
+    const path = this.path + '/' + this.id + '/' + this.collection + '/' + document;
     this.property = this.store.doc<any>(path);
+
     this.property.valueChanges({idField: 'document'}).subscribe(document => {
       this.form.patchValue(document as any);
       this.form.controls['id'].disable();

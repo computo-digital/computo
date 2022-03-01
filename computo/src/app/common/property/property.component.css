@@ -1,18 +1,17 @@
 .sidenav-container {
-    flex: 1 1 auto;
-    height: 1000px;
-  }
-    
-  .sidenav-content {
-    display: flex;
-    height: 1000px;
-  }
-    
-  .sidenav-form {
-    padding: 20px;
-    width: 500px;
-    height: 100%;
-  }
+  flex: 1 1 auto;
+}
+  
+.sidenav-content {
+  display: flex;
+}
+  
+.sidenav-form {
+  /* padding: 20px;
+  width: 800px; */
+  /* height: 100%; */
+  display: flex;
+}
 
   .mat-list-base {
       padding-top: 0px !important;
@@ -69,3 +68,5 @@ table tr:hover{
     text-align: center;
     font-weight: bold;
   }
+
+
