@@ -6,6 +6,10 @@
   /* border-bottom-color: rgba(255,255,255,.12); */
 }
 
+tr.mat-header-row {
+  height: 48px;
+}
+
 table {
   width: 100%;
 }

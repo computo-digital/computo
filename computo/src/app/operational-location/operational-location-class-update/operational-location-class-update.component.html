@@ -1,47 +1,50 @@
 <div class="container">
     <form [formGroup]="form" (ngSubmit)="update()">
-        <mat-tab-group animationDuration="0ms">
-            <mat-tab label="Properties">
-                <div fxLayout="column">
-                    <app-property label="Operational Location" path="OperationalLocationClass" collection="operationalLocationClassProperty"></app-property>
-                </div>
-            </mat-tab>
-            <mat-tab label="Information">
-                <div fxLayout="column" class="form">
-                    <mat-form-field appearance="outline">
-                        <mat-label>ID</mat-label>
-                        <input matInput formControlName="id">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Created</mat-label>
-                        <input disabled matInput value="{{form.get('created')?.value.seconds * 1000  | date:'long'}}">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Modified</mat-label>
-                        <input disabled matInput value="{{form.get('modified')?.value.seconds * 1000 | date:'long'}}">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Description</mat-label>
-                        <textarea matInput formControlName="description" rows="4" #description maxlength="256"
-                            placeholder="Short description of class." autocomplete="off"></textarea>
-                        <mat-hint align="end">{{description.value.length}} / 256</mat-hint>
-                    </mat-form-field>
-                    <!-- <h2>Hierarchy Scope</h2> -->
-                    <app-hierarchy [form]="form"></app-hierarchy>
-                    <div fxLayout="column" fxLayoutAlign="end end" class="form">
-                        <button mat-flat-button type="submit" [disabled]="!form.valid" color="primary">Update</button>
+        <mat-toolbar>
+            <span>Operational location class</span>
+            <span class="spacer"></span>
+            <button mat-flat-button type="submit" [disabled]="!form.valid" color="primary">Update</button>
+          </mat-toolbar>
+        <div fxLayout="row">
+            <div fxLayout="column" fxFlex="50" class="form">
+                <mat-form-field appearance="outline">
+                    <mat-label>ID</mat-label>
+                    <input matInput formControlName="id">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Created</mat-label>
+                    <input disabled matInput value="{{form.get('created')?.value.seconds * 1000  | date:'long'}}">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Modified</mat-label>
+                    <input disabled matInput value="{{form.get('modified')?.value.seconds * 1000 | date:'long'}}">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput formControlName="description" rows="4" #description maxlength="256"
+                        placeholder="Short description of class." autocomplete="off"></textarea>
+                    <mat-hint align="end">{{description.value.length}} / 256</mat-hint>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="50" class="form">
+                <app-hierarchy [form]="form"></app-hierarchy>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <mat-tab-group animationDuration="0ms" fxLayout="column" fxFlex>
+                <mat-tab label="Properties">
+                    <div fxLayout="column">
+                        <app-property label="Operational Location" path="OperationalLocationClass"
+                            collection="operationalLocationClassProperty"></app-property>
                     </div>
-                </div>
-            </mat-tab>
-            <mat-tab label="Relationships">
-                <div fxLayout="column" class="form">
-                    <app-relationship [form]="form" label="Operational Location Class" path="OperationalLocationClass" relationship="operationalLocationClass"></app-relationship>
-                    <app-relationship [form]="form" label="Operational Location" path="OperationalLocation" relationship="operationalLocationID"></app-relationship>
-                    <div fxLayout="column" fxLayoutAlign="end end" class="form">
-                        <button mat-flat-button type="submit" [disabled]="!form.valid" color="primary">Update</button>
+                </mat-tab>
+                <mat-tab label="Relationships">
+                    <div fxLayout="column" class="form">
+                        <app-relationship [form]="form" label="Operational Location Class" path="OperationalLocationClass" relationship="operationalLocationClass"></app-relationship>
+                        <app-relationship [form]="form" label="Operational Location" path="OperationalLocation" relationship="operationalLocationID"></app-relationship>
                     </div>
-                </div>
-            </mat-tab>
-        </mat-tab-group>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
     </form>
 </div>

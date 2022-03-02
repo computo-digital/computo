@@ -23,7 +23,7 @@
       <tr mat-row *matRowDef="let row; columns: columns;" [routerLink]="['update/', row.document]" [ngClass]="{'active': document == row.document}" (click)="open(row.document, drawer)"></tr>
     </table>
   </mat-sidenav-content>
-  <mat-sidenav #drawer position="end" mode="side" fullscreen>
+  <mat-sidenav #drawer position="end" mode="side">
     <router-outlet></router-outlet>
   </mat-sidenav>
 </mat-sidenav-container>
