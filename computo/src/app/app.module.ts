@@ -16,7 +16,6 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../app/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from './navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -36,11 +35,11 @@ import { HierarchyComponent } from './common/hierarchy/hierarchy.component';
 import { RelationshipComponent } from './common/relationship/relationship.component';
 import { IdentificationComponent } from './common/identification/identification.component';
 import { PropertyComponent } from './common/property/property.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     OperationalLocationClassListComponent,
     OperationalLocationComponent,
     OperationalLocationClassComponent,
@@ -51,6 +50,7 @@ import { PropertyComponent } from './common/property/property.component';
     RelationshipComponent,
     IdentificationComponent,
     PropertyComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,

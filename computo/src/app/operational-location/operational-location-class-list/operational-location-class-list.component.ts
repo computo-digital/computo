@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { doc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { OperationalLocationClassType } from 'src/app/types/operational-location';
 
@@ -13,21 +14,18 @@ export class OperationalLocationClassListComponent implements OnInit {
 
   private collection: AngularFirestoreCollection<OperationalLocationClassType>;
   documents$: Observable<OperationalLocationClassType[]>;
-  controls: boolean = false;
+  document: string;
+
   columns: string[] = [
     'id', 
     'description',
-    'hierarchyScopeEquipmentLevel',
     'hierarchyScopeEquipmentID',
-    'operationalLocationClass',
-    'operationalLocationID',
-    'operationalLocationClassProperty',
-    'controls'
+    'hierarchyScopeEquipmentLevel',
   ];
 
   constructor(
     private readonly store: AngularFirestore,
-    private router: Router
+    private route: ActivatedRoute
     ) {
     this.collection = store.collection<OperationalLocationClassType>('OperationalLocationClass')
     this.documents$ = this.collection.valueChanges({ idField: 'document' });
@@ -36,11 +34,12 @@ export class OperationalLocationClassListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  open(drawer: any){
+  open(document: string, drawer: any){
+    this.document = document;
+    
     if(!drawer.opened){
       drawer.toggle();
     }
-
   }
 
 }

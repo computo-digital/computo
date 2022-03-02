@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container mat-typography" autosize>
+  <mat-sidenav #drawer mode="side" disableClose="true" opened="true">
+    <div fxLayout="column" fxLayoutAlign="end end" class="sidenav-header">
+      <button mat-flat-button (click)="isExpanded = !isExpanded" style="margin: 10px;" *ngIf="isExpanded">
+        <mat-icon aria-label="Menu">arrow_left</mat-icon>
+      </button>
+      <button mat-flat-button (click)="isExpanded = !isExpanded" style="margin: 10px;" *ngIf="!isExpanded">
+        <mat-icon aria-label="Menu">arrow_right</mat-icon>
+      </button>
+    </div>
+    <mat-accordion multi="true" *ngIf="isExpanded">
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Information models</mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/operational/location" routerLinkActive="active">Operational location
+            information</a>
+          <a mat-list-item href="#">Personnel information</a>
+          <a mat-list-item href="#">Role based equipment information</a>
+          <a mat-list-item href="#">Physical asset information</a>
+          <a mat-list-item href="#">Material information</a>
+          <a mat-list-item href="#">Process segment information</a>
+          <a mat-list-item href="#">Operations test information</a>
+          <a mat-list-item href="#">Operations record information</a>
+          <a mat-list-item href="#">Operations event information</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

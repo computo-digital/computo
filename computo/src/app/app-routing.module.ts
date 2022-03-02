@@ -20,14 +20,6 @@ const routes: Routes = [
       }
     ]
   },
-  // {
-  //   path: 'operational/location/class/add',
-  //   component: OperationalLocationClassAddComponent
-  // },
-  // {
-  //   path: 'operational/location/class/update/:id',
-  //   component: OperationalLocationClassUpdateComponent
-  // }
 ];
 
 @NgModule({
