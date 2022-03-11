@@ -46,7 +46,7 @@ export class OperationalLocationClassAddComponent implements OnInit {
     const id = this.store.createId();
     const document: OperationalLocationClassType = this.form.value;
     this.collection.doc(id).set(document).then(result => {
-      this.router.navigate(['/operational/location/class/update/' + id]);
+      this.router.navigate(['update/' + id]);
     })
   }
 

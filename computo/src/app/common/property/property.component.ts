@@ -70,6 +70,7 @@ export class PropertyComponent implements OnInit {
   new(){
     this.form.controls['id'].enable();
     this.form.reset();
+    this.isNew = true;
   }
 
   open(document: string) {

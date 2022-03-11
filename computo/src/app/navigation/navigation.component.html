@@ -1,11 +1,11 @@
 <mat-sidenav-container class="sidenav-container mat-typography" autosize>
   <mat-sidenav #drawer mode="side" disableClose="true" opened="true">
     <div fxLayout="column" fxLayoutAlign="end end" class="sidenav-header">
-      <button mat-flat-button (click)="isExpanded = !isExpanded" style="margin: 10px;" *ngIf="isExpanded">
-        <mat-icon aria-label="Menu">arrow_left</mat-icon>
+      <button mat-icon-button (click)="isExpanded = !isExpanded" style="margin: 10px;" *ngIf="isExpanded" color="primary">
+        <mat-icon>arrow_left</mat-icon>
       </button>
-      <button mat-flat-button (click)="isExpanded = !isExpanded" style="margin: 10px;" *ngIf="!isExpanded">
-        <mat-icon aria-label="Menu">arrow_right</mat-icon>
+      <button mat-icon-button (click)="isExpanded = !isExpanded" style="margin: 10px;" *ngIf="!isExpanded" color="primary">
+        <mat-icon>arrow_right</mat-icon>
       </button>
     </div>
     <mat-accordion multi="true" *ngIf="isExpanded">

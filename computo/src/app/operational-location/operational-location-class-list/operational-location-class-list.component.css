@@ -1,22 +1,3 @@
-table {
-  width: 100%;
-}
-
-tr.mat-header-row {
-  height: 64px;
-}
-
-table tr:hover{
-  cursor: pointer;
-  background: #b4b4b433;
-  color: white;
-}
-
-.active{
-  background: #b4b4b433;
-  color: white;
-}
-
 .mat-column-id {
   font-weight:bold;
 }
@@ -28,11 +9,10 @@ table tr:hover{
   text-overflow: ellipsis;
 }
 
-.mat-sidenav { 
-  display: flex; 
+.mat-column-action {
+  justify-content: flex-end;
 }
 
-.mat-sidenav-container { 
-  flex: 1 1 auto; 
-  height: 100%; 
+.sidenav {
+  width: 50vw;
 }

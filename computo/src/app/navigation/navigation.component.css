@@ -24,8 +24,8 @@
 .sidenav {
   width: 300px;
   background-attachment: fixed;
-  background-color: #303030;
-  /* background-color: #051e34; */
+  /* background-color: #303030; */
+  background-color: #051e34;
   background-image: url(//www.gstatic.com/mobilesdk/190424_mobilesdk/nav_nachos@2x.png);
   background-position: left 0 bottom 0;
   background-repeat: no-repeat;
@@ -60,6 +60,7 @@
 .active {
   /* color: #669df6 !important; */
   color: white !important;
+  font-weight: bolder;
 }
 
 .mat-panel-title-sub {

@@ -21,6 +21,7 @@ export class OperationalLocationClassListComponent implements OnInit {
     'description',
     'hierarchyScopeEquipmentID',
     'hierarchyScopeEquipmentLevel',
+    'action'
   ];
 
   constructor(
