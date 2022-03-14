@@ -7,19 +7,17 @@ import { OperationalLocationComponent } from './operational-location/operational
 
 const routes: Routes = [
   {
-    path: 'operational/location',
-    component: OperationalLocationClassListComponent,
-    children: [
-      {
-        path: 'add',
-        component: OperationalLocationClassAddComponent
-      },
-      {
-        path: 'update/:id',
-        component: OperationalLocationClassUpdateComponent
-      }
-    ]
+    path: 'operational/location/class',
+    component: OperationalLocationClassListComponent
   },
+  {
+    path: 'operational/location/class/add',
+    component: OperationalLocationClassAddComponent
+  },
+  {
+    path: 'operational/location/class/update/:id',
+    component: OperationalLocationClassUpdateComponent
+  }
 ];
 
 @NgModule({

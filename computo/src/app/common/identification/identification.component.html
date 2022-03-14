@@ -1,9 +1,10 @@
 <div [formGroup]="idForm">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" fxFlex>
         <mat-label>ID</mat-label>
         <input matInput formControlName="id" #id maxlength="64"
             placeholder="Ex. ." autocomplete="off"
             oninput="this.value = this.value.toUpperCase()">
+            <mat-hint>Global unique identification of data object</mat-hint>
         <mat-hint align="end">{{id.value.length}} / 64</mat-hint>
         <div *ngIf="objectId" matSuffix>
             <mat-error *ngIf="objectId.hasError('exists')">

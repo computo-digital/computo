@@ -48,7 +48,7 @@
 
 .sidenav-header {
   height: 64px !important;
-  color: #fff;
+  /* color: #fff; */
   /* font-family: "Google Sans",sans-serif; */
   /* font-size: 15px; */
   font-weight: 500;
@@ -59,7 +59,7 @@
 
 .active {
   /* color: #669df6 !important; */
-  color: white !important;
+  /* color: white !important; */
   font-weight: bolder;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .mat-nav-list .mat-list-item{
-  color: rgba(255,255,255,.8);
+  /* color: rgba(255,255,255,.8); */
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
@@ -103,11 +103,11 @@
 }
 
 ::ng-deep .mat-expansion-panel-header-title {
-  color: #fff;
+  /* color: #fff; */
 }
 
 ::ng-deep .mat-expansion-panel {
-  color: #fff;
+  /* color: #fff; */
   border-bottom: 1px solid rgba(255,255,255,0.1) !important;
 }
 
@@ -116,11 +116,11 @@
 }
 
 ::ng-deep .mat-expansion-panel .mat-expanded {
-  color: #fff;
+  /* color: #fff; */
   background-color: rgba(255,255,255,.06) !important
 }
 
 ::ng-deep .mat-expansion-panel .mat-expanded:hover {
-  color: #fff;
+  /* color: #fff; */
   background-color: rgba(255,255,255,.08) !important
 }

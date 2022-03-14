@@ -1,20 +1,14 @@
 <div class="container">
     <form [formGroup]="form" (ngSubmit)="update()">
-        <mat-toolbar>
+        <mat-toolbar fxLayoutGap="24px">
             <span>Operational location class</span>
             <span class="spacer"></span>
             <button mat-flat-button type="submit" [disabled]="!form.valid" color="primary">Update</button>
+            <button mat-flat-button type="button" [routerLink]="['/operational/location/class/']">Close</button>
         </mat-toolbar>
         <div fxLayout="row">
             <div fxLayout="column" fxFlex="50" class="form">
-                <!-- <p>
-                    A representation of a grouping of operational locations with similar
-                    characteristics for a definite purpose such as manufacturing operations
-                    definition, scheduling, capability and performance shall be presented as an
-                    operational location class. Any operational location may be a member of
-                    zero or more operational
-                    location classes.
-                </p> -->
+                <h3>Identificaiton Informaiton</h3>
                 <mat-form-field appearance="outline" color="primary">
                     <mat-label>ID</mat-label>
                     <input matInput formControlName="id">
@@ -35,6 +29,7 @@
                 </mat-form-field>
             </div>
             <div fxLayout="column" fxFlex="50" class="form">
+                <h3>Hierarchy and Scope</h3>
                 <app-hierarchy [form]="form"></app-hierarchy>
             </div>
         </div>
@@ -47,11 +42,16 @@
                     </div>
                 </mat-tab>
                 <mat-tab label="Relationships">
-                    <div fxLayout="column" class="form">
-                        <app-relationship [form]="form" label="Operational Location Class"
-                            path="OperationalLocationClass" relationship="operationalLocationClass"></app-relationship>
-                        <app-relationship [form]="form" label="Operational Location" path="OperationalLocation"
-                            relationship="operationalLocationID"></app-relationship>
+                    <div fxLayout="row" fxLayoutGap="24px" class="form">
+                        <div fxLayout="column" fxFlex>
+                            <app-relationship [form]="form" label="Operational Location Class"
+                                path="OperationalLocationClass" relationship="operationalLocationClass">
+                            </app-relationship>
+                        </div>
+                        <div fxLayout="column" fxFlex>
+                            <app-relationship [form]="form" label="Operational Location" path="OperationalLocation"
+                                relationship="operationalLocationID"></app-relationship>
+                        </div>
                     </div>
                 </mat-tab>
             </mat-tab-group>

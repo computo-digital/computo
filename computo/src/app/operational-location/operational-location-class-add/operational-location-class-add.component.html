@@ -1,7 +1,10 @@
-<!-- <div class="container">
-    <form [formGroup]="form" (ngSubmit)="set()" fxLayout="row" fxLayoutAlign="center center">
-        <div fxLayout="column" fxFlex="704px">
-            <h2>Create a new operational location class</h2>
+<form [formGroup]="form" (ngSubmit)="set()">
+    <mat-toolbar>
+        <span>Operational location class</span>
+        <span class="spacer"></span>
+    </mat-toolbar>
+    <div fxLayout="row" fxLayoutAlign="center center" class="form">
+        <div fxLayout="column" fxFlex="50">
             <p>
                 A representation of a grouping of operational locations with similar
                 characteristics for a definite purpose such as manufacturing operations
@@ -14,10 +17,9 @@
             <mat-form-field appearance="outline">
                 <mat-label>Description</mat-label>
                 <textarea matInput formControlName="description" rows="4" #description maxlength="256"
-                    placeholder="Short description of class." autocomplete="off"></textarea>
+                    placeholder="Breif de" autocomplete="off"></textarea>
+                <mat-hint>Short description of class </mat-hint>
                 <mat-hint align="end">{{description.value.length}} / 256</mat-hint>
-                <mat-hint>Objects in the information model which required unique identificaitons contain an ID attribute
-                    and description</mat-hint>
             </mat-form-field>
             <h2>Hierarchy Scope</h2>
             <p>
@@ -28,63 +30,9 @@
                 the associated instance in the role based equipment hierarchy.
             </p>
             <app-hierarchy [form]="form"></app-hierarchy>
-            <h2>Relationships</h2>
-            <app-relationship [form]="form" label="Operational Location Class" path="OperationalLocationClass" relationship="operationalLocationClass"></app-relationship>
-            <app-relationship [form]="form" label="Operational Location" path="OperationalLocation" relationship="operationalLocationID"></app-relationship>
-            <button mat-stroked-button type="submit" [disabled]="!form.valid">Add new operational class</button>
-            <pre>{{form.value | json}}</pre>
-        </div>
-    </form>
-</div> -->
-
-
-<div class="container">
-    <form [formGroup]="form" (ngSubmit)="set()">
-        <mat-toolbar>
-            <span>Operational location class</span>
-            <span class="spacer"></span>
-            <button mat-stroked-button type="submit" [disabled]="!form.valid" color="primary">Save</button>
-          </mat-toolbar>
-        <div fxLayout="row">
-            <div fxLayout="column" fxFlex="50" class="form">
-                <p>
-                    A representation of a grouping of operational locations with similar
-                    characteristics for a definite purpose such as manufacturing operations
-                    definition, scheduling, capability and performance shall be presented as an
-                    operational location class. Any operational location may be a member of
-                    zero or more operational
-                    location classes.
-                </p>
-                <app-identification [form]="form" path="OperationalLocationClass" fxFlex></app-identification>
-                <mat-form-field appearance="outline">
-                    <mat-label>Created</mat-label>
-                    <input disabled matInput value="{{form.get('created')?.value.seconds * 1000  | date:'long'}}">
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                    <mat-label>Modified</mat-label>
-                    <input disabled matInput value="{{form.get('modified')?.value.seconds * 1000 | date:'long'}}">
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                    <mat-label>Description</mat-label>
-                    <textarea matInput formControlName="description" rows="4" #description maxlength="256"
-                        placeholder="Short description of class." autocomplete="off"></textarea>
-                    <mat-hint align="end">{{description.value.length}} / 256</mat-hint>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="50" class="form">
-                <app-hierarchy [form]="form"></app-hierarchy>
+            <div fxLayout="row" fxLayoutAlign="end center">
+                <button mat-flat-button type="submit" [disabled]="!form.valid" color="primary">Create</button>
             </div>
         </div>
-        <div fxLayout="row">
-            <mat-tab-group animationDuration="0ms" fxLayout="column" fxFlex>
-                <mat-tab label="Properties" disabled>
-                    <div fxLayout="column" fxLayoutAlign="center center" style="padding: 100px;">
-                        test
-                    </div>
-                </mat-tab>
-                <mat-tab label="Relationships" disabled>
-                </mat-tab>
-            </mat-tab-group>
-        </div>
-    </form>
-</div>
+    </div>
+</form>

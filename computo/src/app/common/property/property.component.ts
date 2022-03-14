@@ -46,6 +46,7 @@ export class PropertyComponent implements OnInit {
     'valueString',
     'dataType',
     'unitOfMeasure',
+    'action'
   ];
 
   constructor(
