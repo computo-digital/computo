@@ -2,6 +2,9 @@
     <mat-toolbar>
         <span>Operational location class</span>
         <span class="spacer"></span>
+        <button mat-icon-button type="button" [routerLink]="['/operational/location/class/']" matTooltip="close">
+            <mat-icon>close</mat-icon>
+        </button>
     </mat-toolbar>
     <div fxLayout="row" fxLayoutAlign="center center" class="form">
         <div fxLayout="column" fxFlex="50">
@@ -16,8 +19,7 @@
             <app-identification [form]="form" path="OperationalLocationClass"></app-identification>
             <mat-form-field appearance="outline">
                 <mat-label>Description</mat-label>
-                <textarea matInput formControlName="description" rows="4" #description maxlength="256"
-                    placeholder="Breif de" autocomplete="off"></textarea>
+                <textarea matInput formControlName="description" rows="4" #description maxlength="256" autocomplete="off"></textarea>
                 <mat-hint>Short description of class </mat-hint>
                 <mat-hint align="end">{{description.value.length}} / 256</mat-hint>
             </mat-form-field>

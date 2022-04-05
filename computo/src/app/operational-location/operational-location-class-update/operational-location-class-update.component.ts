@@ -54,4 +54,9 @@ export class OperationalLocationClassUpdateComponent implements OnInit {
     this.document.update(document);
   }
 
+  delete() {
+    this.document.delete();
+    this.router.navigate(['/operational/location/class/']);
+  }
+
 }

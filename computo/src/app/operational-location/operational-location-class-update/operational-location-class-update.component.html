@@ -1,10 +1,16 @@
 <div class="container">
     <form [formGroup]="form" (ngSubmit)="update()">
-        <mat-toolbar fxLayoutGap="24px">
+        <mat-toolbar fxLayoutGap="8px">
             <span>Operational location class</span>
             <span class="spacer"></span>
-            <button mat-flat-button type="submit" [disabled]="!form.valid" color="primary">Update</button>
-            <button mat-flat-button type="button" [routerLink]="['/operational/location/class/']">Close</button>
+            <button mat-flat-button type="submit" [disabled]="!form.valid || !form.dirty" color="primary">Save
+                changes</button>
+            <button mat-icon-button type="button" (click)="delete()" matTooltip="Delete">
+                <mat-icon>delete_outline</mat-icon>
+            </button>
+            <button mat-icon-button type="button" [routerLink]="['/operational/location/class/']" matTooltip="close">
+                <mat-icon>close</mat-icon>
+            </button>
         </mat-toolbar>
         <div fxLayout="row">
             <div fxLayout="column" fxFlex="50" class="form">
