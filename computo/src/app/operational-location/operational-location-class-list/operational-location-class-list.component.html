@@ -30,3 +30,6 @@
   <tr mat-header-row *matHeaderRowDef="columns"></tr>
   <tr mat-row *matRowDef="let row; columns: columns;" [routerLink]="['/operational/location/class/update/', row.document]"></tr>
 </table>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <span *ngIf="(documents$ | async)?.length == 0" style="padding: 24px;">No data</span>
+</div>

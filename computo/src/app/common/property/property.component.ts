@@ -59,10 +59,10 @@ export class PropertyComponent implements OnInit {
     console.log('on init')
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      this.document = this.store.doc<any>(this.path + '/' + params['id']);
-      
+      this.document = this.store.doc<any>(this.path + '/' + params['id']);      
       this.document.valueChanges().subscribe(document => {
         this.properties$ = this.document.collection<any>(this.collection).valueChanges({ idField: 'document' });
+        this.new();
       });
     })
   }

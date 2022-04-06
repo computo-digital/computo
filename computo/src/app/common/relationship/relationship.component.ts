@@ -73,12 +73,12 @@ export class RelationshipComponent implements OnInit {
     this.form.controls[this.relationship].value.push(event.option.viewValue);
     this.relationshipInput.nativeElement.value = '';
     this.predicate.setValue('');
+    this.form.controls[this.relationship].markAsDirty();
   }
 
   patch() {
     const relationship = this.form.get(this.relationship);
     this.predicate.setValue(relationship?.value);
   }
-
 
 }
