@@ -65,7 +65,7 @@
         <mat-form-field formGroupName="value" appearance="outline">
           <mat-label>Data Type</mat-label>
           <mat-select formControlName="dataType">
-            <mat-option *ngFor="let option of dataTypeType" value="{{option}}">
+            <mat-option *ngFor="let option of dataTypeType.sort()" value="{{option}}">
               {{option}}
             </mat-option>
           </mat-select>

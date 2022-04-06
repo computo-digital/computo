@@ -29,8 +29,6 @@ import { OperationalLocationComponent } from './operational-location/operational
 import { OperationalLocationClassComponent } from './operational-location/operational-location-class/operational-location-class.component';
 import { OperationalLocationClassAddComponent } from './operational-location/operational-location-class-add/operational-location-class-add.component';
 import { OperationalLocationClassUpdateComponent } from './operational-location/operational-location-class-update/operational-location-class-update.component';
-import { OperationalLocationClassFormComponent } from './operational-location/operational-location-class-form/operational-location-class-form.component';
-
 import { HierarchyComponent } from './common/hierarchy/hierarchy.component';
 import { RelationshipComponent } from './common/relationship/relationship.component';
 import { IdentificationComponent } from './common/identification/identification.component';
@@ -45,7 +43,6 @@ import { NavigationComponent } from './navigation/navigation.component';
     OperationalLocationClassComponent,
     OperationalLocationClassAddComponent,
     OperationalLocationClassUpdateComponent,
-    OperationalLocationClassFormComponent,
     HierarchyComponent,
     RelationshipComponent,
     IdentificationComponent,
