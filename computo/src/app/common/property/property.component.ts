@@ -56,7 +56,6 @@ export class PropertyComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('on init')
     this.route.params.subscribe(params => {
       this.id = params['id'];
       this.document = this.store.doc<any>(this.path + '/' + params['id']);      
@@ -74,7 +73,6 @@ export class PropertyComponent implements OnInit {
   }
 
   open(document: string) {
-    console.log('open', document);
     this.active = document
     const path = this.path + '/' + this.id + '/' + this.collection + '/' + document;
     this.property = this.store.doc<any>(path);
